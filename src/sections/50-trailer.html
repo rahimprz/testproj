@@ -1,0 +1,26 @@
+<section class="section trailer" id="trlr" data-section="trailer" data-theme="dark">
+  <div class="container">
+    <header class="trailer__head">
+      <p class="eyebrow"><span class="eyebrow__dot"></span>Watch</p>
+      <h2 class="trailer__title" data-split="words">My Book <span class="hl">Video Trailer</span></h2>
+    </header>
+  </div>
+  <div class="trailer__clip">
+    <button class="trailer__card" type="button" data-trailer-open data-video="https://orchid-tapir-982695.hostingersite.com/wp-content/uploads/2026/04/Video-File.mp4" data-cursor-label="Play" aria-label="Play the book trailer">
+      <span class="trailer__poster" data-media>
+        <img src="assets/img/original/image.png" data-remote="https://orchid-tapir-982695.hostingersite.com/wp-content/uploads/2026/04/image-1536x864.png" alt="" width="1536" height="864" loading="lazy">
+        <span class="media-fallback"><span class="media-fallback__label">Borland</span></span>
+      </span>
+      <span class="trailer__shade" aria-hidden="true"></span>
+      <span class="trailer__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="trailer__meta" aria-hidden="true"><span>POR! Prince of Borland</span><span>Official trailer</span></span>
+    </button>
+  </div>
+  <div class="trailer-modal" data-trailer-modal hidden>
+    <div class="trailer-modal__bg" data-trailer-close></div>
+    <div class="trailer-modal__box" role="dialog" aria-modal="true" aria-label="Book trailer">
+      <button class="trailer-modal__close" type="button" data-trailer-close aria-label="Close trailer">✕</button>
+      <video class="trailer-modal__video" controls playsinline preload="none"></video>
+    </div>
+  </div>
+</section>

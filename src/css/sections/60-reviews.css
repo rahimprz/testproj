@@ -1,0 +1,20 @@
+.reviews { overflow: clip; padding-bottom: clamp(4rem, 7vw, 6rem); }
+.reviews__head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.reviews__eyebrow { font-size: 1rem; letter-spacing: 0.3em; color: var(--c-sun-2); }
+.reviews__title { font-size: var(--fs-h2); text-transform: capitalize; color: #fff; }
+.reviews__title .hl { color: var(--c-sun); }
+.reviews__viewport { overflow: hidden; padding-inline: var(--gutter); cursor: grab; touch-action: pan-y; }
+.reviews__viewport:active { cursor: grabbing; }
+.reviews__track { display: flex; gap: 20px; width: max-content; will-change: transform; }
+.review { position: relative; flex: 0 0 auto; width: clamp(280px, calc((min(100vw, 1425px) - 2 * var(--gutter) - 40px) / 3), 460px); min-height: 350px; padding: 1.8rem 1.6rem; border-radius: 10px; background: var(--c-plum); color: #fff; display: flex; flex-direction: column; gap: 0.9rem; box-shadow: 0 30px 60px -30px rgba(12, 9, 16, 0.7); overflow: hidden; user-select: none; }
+.review__stars { color: var(--c-sun); width: 110px; }
+.review__title { font-family: var(--f-sans); font-weight: 600; font-stretch: normal; font-size: 1rem; line-height: 1.6; letter-spacing: 0.04em; text-transform: uppercase; }
+.review p { font-size: 0.95rem; line-height: 1.7; color: rgba(255, 255, 255, 0.85); }
+.review__quote { position: absolute; right: 1rem; bottom: -3.2rem; font-family: var(--f-display); font-weight: 700; font-size: 11rem; line-height: 1; color: rgba(237, 151, 15, 0.14); pointer-events: none; }
+.reviews__controls { display: flex; align-items: center; gap: 1.5rem; margin-top: 2.5rem; }
+.reviews__progress { position: relative; flex: 1; height: 2px; background: rgba(255, 255, 255, 0.22); overflow: hidden; }
+.reviews__progress span { position: absolute; inset: 0; background: var(--c-sun); transform-origin: 0 50%; transform: scaleX(0.2); }
+.reviews__count { font-family: var(--f-ui); font-size: 0.9rem; letter-spacing: 0.15em; color: #fff; font-variant-numeric: tabular-nums; }
+.reviews__buttons { display: flex; gap: 0.6rem; }
+.reviews__btn { width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.45); color: #fff; font-size: 1.1rem; transition: background-color 0.4s, color 0.4s, border-color 0.4s; }
+.reviews__btn:hover, .reviews__btn:focus-visible { background: var(--c-sun); border-color: var(--c-sun); color: var(--c-ink); }

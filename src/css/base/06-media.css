@@ -1,0 +1,51 @@
+/* ---------- Media frames with designed stand-ins ----------
+   <figure data-media><img ... data-remote="..."><div class="book3d">…</div></figure>
+   If both the local and remote image fail, the head script adds .is-missing and the stand-in shows. */
+[data-media] { position: relative; }
+[data-media] .book3d, [data-media] .media-fallback { display: none; }
+[data-media].is-missing > img { display: none; }
+[data-media].is-missing .book3d { display: block; }
+[data-media].is-missing .media-fallback { display: grid; }
+
+/* CSS book cover: POR! Prince of Borland */
+.book3d { position: relative; width: min(100%, 360px); aspect-ratio: 0.66; margin-inline: auto; perspective: 1400px; }
+.book3d__body { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateY(-24deg) rotateX(4deg); transition: transform 1.2s var(--ease-orchid); }
+.book3d__cover {
+  position: absolute; inset: 0; border-radius: 4px 10px 10px 4px; overflow: hidden;
+  display: grid; grid-template-rows: 1fr auto auto auto; align-content: end; gap: 0.35rem; padding: 12% 11% 13%;
+  background:
+    radial-gradient(circle at 70% 26%, #ffe2a8 0 7%, #eeb253 8% 10%, transparent 26%),
+    radial-gradient(circle at 34% 34%, #ed970f 0 14%, rgba(237, 151, 15, 0.35) 15% 22%, transparent 40%),
+    radial-gradient(120% 70% at 50% 110%, #aa451b 0%, rgba(170, 69, 27, 0) 60%),
+    linear-gradient(170deg, #3d3247 0%, #241d2b 55%, #120e16 100%);
+  box-shadow: inset 6px 0 10px rgba(0, 0, 0, 0.45), inset -1px 0 0 rgba(255, 255, 255, 0.08), 30px 40px 60px -20px rgba(0, 0, 0, 0.7), var(--shadow-book);
+  color: #fff; transform: translateZ(14px);
+}
+.book3d__cover::before { /* desert horizon */
+  content: ''; position: absolute; left: -10%; right: -10%; bottom: 24%; height: 22%;
+  background: linear-gradient(180deg, rgba(237, 151, 15, 0.0), rgba(237, 151, 15, 0.25)), #1a1218;
+  clip-path: polygon(0 60%, 12% 40%, 26% 55%, 40% 30%, 55% 52%, 70% 35%, 84% 58%, 100% 42%, 100% 100%, 0 100%);
+}
+.book3d__cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.35) 0 3%, rgba(255,255,255,0.08) 4%, transparent 9%); }
+.book3d__por { position: relative; z-index: 1; font-family: var(--f-display); font-weight: 700; font-stretch: 78%; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 0.85; color: var(--c-sun); text-shadow: 0 4px 30px rgba(237, 151, 15, 0.5); }
+.book3d__title { position: relative; z-index: 1; font-family: var(--f-display); font-weight: 700; font-stretch: 82%; font-size: clamp(1rem, 2.2vw, 1.45rem); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.05; }
+.book3d__author { position: relative; z-index: 1; margin-top: 0.6rem; font-family: var(--f-ui); font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(255, 255, 255, 0.75); }
+.book3d__pages {
+  position: absolute; top: 1.5%; bottom: 1.5%; right: -16px; width: 28px; transform: rotateY(90deg) translateZ(2px); transform-origin: left;
+  background: repeating-linear-gradient(90deg, #f3eadc 0 1px, #d9ccb8 1px 2px);
+}
+
+/* Photo / backdrop stand-in: deep-space panel */
+.media-fallback {
+  position: absolute; inset: 0; place-items: center; overflow: hidden; color: rgba(255, 255, 255, 0.85);
+  background:
+    radial-gradient(1px 1px at 12% 22%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 68% 14%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 82% 62%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 34% 78%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 52% 44%, rgba(255,255,255,.7) 50%, transparent 51%),
+    radial-gradient(circle at 72% 30%, rgba(238, 178, 83, 0.9) 0 5%, transparent 18%),
+    radial-gradient(circle at 30% 70%, rgba(237, 151, 15, 0.55) 0 9%, transparent 30%),
+    linear-gradient(160deg, #3d3247, #241d2b 50%, #0c0910);
+}
+.media-fallback__label { font-family: var(--f-display); font-weight: 700; font-stretch: 80%; font-size: clamp(2.5rem, 8vw, 6rem); text-transform: uppercase; letter-spacing: 0.02em; color: rgba(255, 255, 255, 0.12); }

@@ -1,0 +1,26 @@
+.contact { background: var(--c-paper-2); overflow: clip; }
+.contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.contact__media { position: relative; }
+.contact__shape { position: absolute; left: 0; bottom: 0; width: 62%; height: 62%; background: var(--c-sun); clip-path: polygon(50% 0, 0 100%, 100% 100%); }
+.contact__img { position: relative; margin: 0; }
+.contact__img img { width: 100%; height: auto; filter: drop-shadow(2px 4px 6px #000); }
+.contact__img .book3d { width: 55%; margin-block: 10%; }
+.contact__copy { display: flex; flex-direction: column; gap: 2rem; }
+.contact__title { font-size: var(--fs-h2); text-transform: capitalize; color: var(--c-ink); }
+.contact__form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.field { position: relative; }
+.field--full { grid-column: 1 / -1; }
+.field input, .field textarea {
+  width: 100%; padding: 1.45rem 1.1rem 0.6rem; border: 2px solid #ccc; border-radius: 8px; background: #fff;
+  font-size: 1rem; color: var(--c-ink); transition: border-color 0.3s, box-shadow 0.3s; outline: none;
+}
+.field textarea { min-height: 150px; resize: vertical; }
+.field input:focus, .field textarea:focus { border-color: var(--c-sun); box-shadow: 0 0 0 4px rgba(237, 151, 15, 0.18); }
+.field label { position: absolute; left: 1.15rem; top: 1.05rem; color: #6c6470; pointer-events: none; transform-origin: 0 0; transition: transform 0.35s var(--ease-out), color 0.3s; }
+.field input:focus + label, .field input:not(:placeholder-shown) + label,
+.field textarea:focus + label, .field textarea:not(:placeholder-shown) + label { transform: translateY(-0.62rem) scale(0.72); color: #c87a05; }
+@media (max-width: 899px) {
+  .contact__grid { grid-template-columns: 1fr; }
+  .contact__media { max-width: 440px; }
+  .contact__form { grid-template-columns: 1fr; }
+}

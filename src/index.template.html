@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <!-- @generated -->
-  <title>Orchid — Brand, Web &amp; Story Studio</title>
-  <meta name="description" content="Orchid is an independent studio crafting brands, websites and stories that bloom. Strategy, identity, digital experiences and content — made with care.">
-  <meta name="theme-color" content="#0E0B12">
+  <title>William W. Halford | POR! Prince of Borland</title>
+  <meta name="description" content="From the deserts of Arizona to a world of two suns and untold power. POR! Prince of Borland, a science fiction novel by William W. Halford.">
+  <meta name="theme-color" content="#241d2b">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Orchid — Brand, Web &amp; Story Studio">
-  <meta property="og:description" content="Brands, websites and stories that bloom.">
-  <meta property="og:image" content="assets/img/og-image.svg">
+  <meta property="og:title" content="POR! Prince of Borland by William W. Halford">
+  <meta property="og:description" content="What if one discovery changed your entire reality?">
+  <meta property="og:image" content="https://orchid-tapir-982695.hostingersite.com/wp-content/uploads/2026/04/mockup-2-04.png">
+  <link rel="icon" href="assets/img/original/cropped-William-W-halford-Fav-Icon-01-192x192.png" sizes="192x192">
+  <link rel="icon" href="https://orchid-tapir-982695.hostingersite.com/wp-content/uploads/2026/04/cropped-William-W-halford-Fav-Icon-01-192x192.png" sizes="192x192">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/vendor/lenis/lenis.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <script>
@@ -25,6 +26,15 @@
       if (/[?&]nopreload\b/.test(location.search)) h.classList.add('no-preload');
       // Failsafe: if scripts never boot, never leave the page locked behind the preloader.
       setTimeout(function () { if (!h.classList.contains('is-booted')) h.classList.remove('is-loading'); }, 6000);
+      // Images: try the local copy (assets/img/original, filled by `npm run import`), then the live
+      // WordPress upload in data-remote, then mark the frame so its designed stand-in shows.
+      window.addEventListener('error', function (e) {
+        var t = e.target;
+        if (!t || t.tagName !== 'IMG' || !t.getAttribute('data-remote')) return;
+        if (!t.getAttribute('data-tried')) { t.setAttribute('data-tried', '1'); t.src = t.getAttribute('data-remote'); return; }
+        t.classList.add('is-missing');
+        var m = t.closest('[data-media]'); if (m) m.classList.add('is-missing');
+      }, true);
     })(document);
   </script>
 </head>

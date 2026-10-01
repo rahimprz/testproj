@@ -1,26 +1,31 @@
-# Orchid — animated GSAP landing page
+# William W. Halford: POR! Prince of Borland
 
-A single-page, scroll-driven landing page built with GSAP 3.15 (every plugin, vendored), Lenis smooth scrolling
-and hand-authored SVG / WebGL visuals. It is plain static HTML, CSS and JS: upload the files to any host
-(Hostinger shared hosting included) and it runs. No build step is needed on the server.
+An animated rebuild of the author landing page at `https://orchid-tapir-982695.hostingersite.com/`, made with
+GSAP 3.15 (every plugin, vendored), Lenis smooth scrolling, a canvas starfield and scroll-driven choreography.
+It is plain static HTML, CSS and JS: upload the files to any host (Hostinger shared hosting included) and it runs.
 
-## Status: placeholder content
+## Content and images
 
-This was commissioned as a recreation of `https://orchid-tapir-982695.hostingersite.com/`. That host was blocked by
-the build environment's network policy, so the original text and images could not be read. The brand name "Orchid",
-all copy, client names, numbers and testimonials on this page are **original placeholders**, and every visual is
-original SVG / WebGL art. Swap in the real content with the importer below before publishing.
+All copy comes from the WordPress page source: hero, About The Author, the six themes in About The Book,
+My Book Series, the trailer, the five reader reviews, Recent Posts, the contact form and the footer.
 
-Placeholders to replace:
-- Brand name, copy, project names, stats and testimonials in `src/sections/*.html`.
-- Contact details: `hello@example.com`, `+1 (555) 010-2040`, social links (`href="#"`).
-- Artwork in `assets/img/<section>/`. Every image slot carries `data-slot="<section>-<n>"`.
+A few things were changed or need your input:
+- Typos fixed: "Amzaon" to "Amazon", "Halllford" to "Halford", "Trailor" to "Trailer".
+- The "Buy Now On Amazon" button still links to the About The Book section, as on the WordPress page. Add the real Amazon URL in `src/sections/10-hero.html`.
+- The series blurb on the WordPress page is lorem ipsum. It now reuses the hero line; replace it in `src/sections/40-series.html`.
+- The three blog cards are the site's placeholder posts ("Lorem Ipsum Is Dummy") and link to those post URLs.
+- The contact form and newsletter form post to the existing WordPress Contact Form 7 form and Newsletter plugin.
+- Instagram and Facebook links are `#` on the WordPress page too.
+
+Every image is loaded in this order: a local copy in `assets/img/original/`, then the live WordPress upload,
+then a designed stand-in (a CSS book cover or a starfield panel). To serve the images locally, run the importer
+below. Headings use Clash Display from the WordPress uploads, falling back to a condensed Archivo.
 
 ## Import the original site
 
 ```bash
 npm install
-npm run import                      # defaults to https://orchid-tapir-982695.hostingersite.com/
+npm run import                      # pulls every image and the page text from the WordPress site
 # or: node tools/import-site.mjs https://example.com/ --depth=1 --max-pages=25
 # behind an HTTPS proxy: NODE_USE_ENV_PROXY=1 npm run import
 ```
@@ -31,8 +36,7 @@ It writes:
 - `content/original/manifest.json` mapping each image to its source URL, alt text and nearest heading.
 - `content/original/site.json` with titles, navigation, footer text, contact links, socials, colour variables and fonts.
 
-Then replace the copy in `src/sections/*.html`, point the `data-slot` images at files in `assets/img/original/`,
-adjust colours in `src/css/base/01-tokens.css`, and run `npm run build`.
+The page already points at those file names, so no markup changes are needed after an import. Run `npm run build` after any edit.
 
 ## Develop
 
@@ -84,4 +88,4 @@ The `.htaccess` sets compression and caching and hides the development folders i
 
 - GSAP 3.15 by GreenSock (free for commercial use under the GSAP standard license).
 - Lenis by darkroom.engineering (MIT).
-- Instrument Serif and Inter Tight via Fontsource (SIL Open Font License, see `assets/fonts/`).
+- Poppins, Jost and Archivo via Fontsource (SIL Open Font License, see `assets/fonts/`).

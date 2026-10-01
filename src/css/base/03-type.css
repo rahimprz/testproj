@@ -1,12 +1,13 @@
 h1, h2, h3, .display, .h1, .h2, .h3 {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 700;
+  font-stretch: 82%;
   line-height: var(--lh-tight);
   letter-spacing: var(--tracking-display);
   text-wrap: balance;
 }
-h4, .h4 { font-family: var(--f-sans); font-weight: 600; font-size: var(--fs-h4); line-height: var(--lh-snug); letter-spacing: -0.015em; }
-.mega { font-family: var(--f-display); font-size: var(--fs-mega); line-height: 0.82; letter-spacing: -0.04em; }
+h4, .h4 { font-family: var(--f-sans); font-weight: 600; font-size: var(--fs-h4); line-height: var(--lh-snug); letter-spacing: 0.06em; text-transform: uppercase; }
+.mega { font-family: var(--f-display); font-weight: 700; font-stretch: 80%; font-size: var(--fs-mega); line-height: 0.85; letter-spacing: -0.01em; }
 .h1 { font-size: var(--fs-h1); }
 .h2 { font-size: var(--fs-h2); }
 .h3 { font-size: var(--fs-h3); line-height: 1.02; }
@@ -15,12 +16,8 @@ h4, .h4 { font-family: var(--f-sans); font-weight: 600; font-size: var(--fs-h4);
 .muted { color: var(--muted, #a397ad); }
 p { text-wrap: pretty; }
 
-/* Serif italic accent inside headings: <h2>Brands that <em>bloom</em></h2> */
-h1 em, h2 em, h3 em, .display em, .mega em, .accent-em {
-  font-style: italic;
-  font-family: var(--f-display);
-  letter-spacing: -0.02em;
-}
+/* Accent words in headings, as on the WordPress site: <h2>About The <span class="hl">Book</span></h2> */
+.hl { color: var(--c-sun); }
 .text-grad {
   background: var(--grad-orchid);
   -webkit-background-clip: text;
@@ -34,9 +31,9 @@ h1 em, h2 em, h3 em, .display em, .mega em, .accent-em {
   display: inline-flex;
   align-items: center;
   gap: 0.7em;
-  font-family: var(--f-sans);
+  font-family: var(--f-ui);
   font-size: var(--fs-label);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--muted, #a397ad);
@@ -47,7 +44,7 @@ h1 em, h2 em, h3 em, .display em, .mega em, .accent-em {
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, var(--c-orchid)) 22%, transparent);
 }
 /* Section index: <span class="index">(01)</span> */
-.index { font-family: var(--f-display); font-style: italic; font-size: 1.15rem; color: var(--muted, #a397ad); letter-spacing: 0; }
+.index { font-family: var(--f-ui); font-size: 0.95rem; font-weight: 500; color: var(--accent, var(--c-sun)); letter-spacing: 0.08em; }
 .label { font-size: var(--fs-label); font-weight: 500; letter-spacing: var(--tracking-label); text-transform: uppercase; }
 
 /* SplitText helpers (core FX uses SplitText mask:'lines'; this keeps descenders visible). */
