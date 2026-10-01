@@ -368,6 +368,8 @@
   }
   .svc-card__art-meta { left: 10px; right: 10px; bottom: 10px; }
   .svc-card__chip { font-size: 0.7rem; padding: 0.42rem 0.7rem; }
+  .svc-card__chip-cap { display: none; }
+  .svc-card__art-index { font-size: 0.95rem; padding: 0.25rem 0.7rem; }
   .svc-card__content { gap: 0.9rem; padding: 1.15rem 1.2rem 1.15rem; }
   .svc-card__top { gap: 0.6rem; }
   .svc-card__time { font-size: 0.7rem; padding: 0.32rem 0.65rem; }

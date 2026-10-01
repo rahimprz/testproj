@@ -208,7 +208,7 @@ Site.register('services', (ctx) => {
     tl.addLabel('c0', 0);
     for (let i = 1; i < n; i++) {
       const at = i - 1;
-      tl.fromTo(cards[i], { yPercent: 112, rotationX: 9 }, { yPercent: 0, rotationX: 0, duration: 1, ease: 'power2.inOut' }, at);
+      tl.fromTo(cards[i], { yPercent: 126, rotationX: 9 }, { yPercent: 0, rotationX: 0, duration: 1, ease: 'power2.inOut' }, at);
       if (artInner[i]) tl.fromTo(artInner[i], { scale: 1.32, yPercent: -10 }, { scale: 1, yPercent: 0, duration: 1, ease: 'power2.out' }, at);
       tl.fromTo(parts[i], { y: 90 }, { y: 0, duration: 0.9, stagger: 0.035, ease: 'power3.out' }, at + 0.05);
       for (let j = 0; j < i; j++) {
