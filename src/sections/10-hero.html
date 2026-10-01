@@ -1,0 +1,284 @@
+<section class="section hero" id="top" data-section="hero" data-theme="dark" aria-labelledby="hero-title">
+  <!-- Living visual: WebGL flow (canvas) over a CSS gradient fallback, plus the SVG orchid bloom. Decorative. -->
+  <div class="hero__stage" data-hero-stage data-slot="hero-1" aria-hidden="true">
+    <canvas class="hero__canvas" data-hero-canvas></canvas>
+    <div class="hero__veil"></div>
+    <div class="hero__bloom-wrap" data-hero-bloom-wrap>
+      <div class="hero__glow"></div>
+      <div class="hero-bloom" data-hero-bloom data-slot="hero-2">
+        <svg class="hb-svg" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <defs>
+            <radialGradient id="hb-g-sepal" cx="400" cy="404" r="310" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#1c0a27"/>
+              <stop offset="0.22" stop-color="#4c1d66"/>
+              <stop offset="0.58" stop-color="#8f4cbc"/>
+              <stop offset="0.86" stop-color="#cfa2e8"/>
+              <stop offset="1" stop-color="#ead6f3"/>
+            </radialGradient>
+            <radialGradient id="hb-g-petal" cx="400" cy="412" r="300" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#2b0f3c"/>
+              <stop offset="0.16" stop-color="#5e2482"/>
+              <stop offset="0.44" stop-color="#b26bd8"/>
+              <stop offset="0.76" stop-color="#e9b6d6"/>
+              <stop offset="1" stop-color="#f8e2ea"/>
+            </radialGradient>
+            <linearGradient id="hb-g-lip" x1="400" y1="400" x2="400" y2="560" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#f4d58c"/>
+              <stop offset="0.2" stop-color="#f2c4d6"/>
+              <stop offset="0.55" stop-color="#9a4fc4"/>
+              <stop offset="1" stop-color="#3a1550"/>
+            </linearGradient>
+            <linearGradient id="hb-g-lobe" x1="330" y1="360" x2="400" y2="412" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#f2c4d6"/>
+              <stop offset="1" stop-color="#7a3aa0"/>
+            </linearGradient>
+            <linearGradient id="hb-g-lobe-r" x1="470" y1="360" x2="400" y2="412" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#f2c4d6"/>
+              <stop offset="1" stop-color="#7a3aa0"/>
+            </linearGradient>
+            <linearGradient id="hb-g-column" x1="400" y1="372" x2="400" y2="424" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#fbf6ef"/>
+              <stop offset="1" stop-color="#e6d2f1"/>
+            </linearGradient>
+            <linearGradient id="hb-gloss" x1="0" y1="0" x2="0.9" y2="0.7">
+              <stop offset="0" stop-color="#ffffff" stop-opacity="0.42"/>
+              <stop offset="0.32" stop-color="#ffffff" stop-opacity="0.08"/>
+              <stop offset="0.6" stop-color="#ffffff" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="hb-rim" x1="400" y1="400" x2="400" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#f2c4d6" stop-opacity="0"/>
+              <stop offset="0.7" stop-color="#f2c4d6" stop-opacity="0.35"/>
+              <stop offset="1" stop-color="#fff4f8" stop-opacity="0.8"/>
+            </linearGradient>
+            <linearGradient id="hb-vein-g" x1="400" y1="400" x2="400" y2="130" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#fbeaf2" stop-opacity="0"/>
+              <stop offset="0.35" stop-color="#fbeaf2" stop-opacity="0.26"/>
+              <stop offset="1" stop-color="#fbeaf2" stop-opacity="0.08"/>
+            </linearGradient>
+            <linearGradient id="hb-rib-g" x1="400" y1="400" x2="400" y2="180" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#2b0f3c" stop-opacity="0.45"/>
+              <stop offset="1" stop-color="#2b0f3c" stop-opacity="0"/>
+            </linearGradient>
+            <radialGradient id="hb-shade" cx="400" cy="262" r="176" gradientUnits="userSpaceOnUse">
+              <stop offset="0.55" stop-color="#0e0b12" stop-opacity="0.55"/>
+              <stop offset="0.8" stop-color="#0e0b12" stop-opacity="0.18"/>
+              <stop offset="1" stop-color="#0e0b12" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="hb-g-heart" cx="400" cy="400" r="190" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#f2c4d6" stop-opacity="0.55"/>
+              <stop offset="0.35" stop-color="#b26bd8" stop-opacity="0.28"/>
+              <stop offset="1" stop-color="#4c1d66" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="hb-g-pollen" cx="400" cy="380" r="8" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#fff1c4"/>
+              <stop offset="1" stop-color="#e8c46a"/>
+            </radialGradient>
+          </defs>
+      
+          <g class="hb-halo" data-bloom-layer="-0.6">
+            <circle class="hb-ring" cx="400" cy="400" r="372" stroke="#f4efe8" stroke-opacity="0.16" stroke-width="1"/>
+            <circle class="hb-ring hb-ring--dash" cx="400" cy="400" r="336" stroke="#f4efe8" stroke-opacity="0.22" stroke-width="1" stroke-dasharray="1 7"/>
+            <circle class="hb-ring" cx="400" cy="400" r="250" stroke="#f4efe8" stroke-opacity="0.09" stroke-width="1"/>
+            <path class="hb-ticks" d="M400 48 L400 28 M419.1 36.5 L419.5 28.5 M438 38 L438.9 30 M456.9 40.5 L458.2 32.6 M475.7 44 L477.3 36.1 M494.2 48.4 L496.3 40.7 M512.5 53.8 L515 46.2 M530.4 60.2 L533.3 52.7 M548.1 67.5 L551.3 60.2 M565.3 75.7 L568.9 68.5 M576 95.2 L586 77.8 M598.2 94.7 L602.6 88 M614 105.5 L618.7 99 M629.1 117.1 L634.1 110.9 M643.6 129.5 L648.9 123.6 M657.4 142.6 L663 137 M670.5 156.4 L676.4 151.1 M682.9 170.9 L689.1 165.9 M694.5 186 L701 181.3 M705.3 201.8 L712 197.4 M704.8 224 L722.2 214 M724.3 234.7 L731.5 231.1 M732.5 251.9 L739.8 248.7 M739.8 269.6 L747.3 266.7 M746.2 287.5 L753.8 285 M751.6 305.8 L759.3 303.7 M756 324.3 L763.9 322.7 M759.5 343.1 L767.4 341.8 M762 362 L770 361.1 M763.5 380.9 L771.5 380.5 M752 400 L772 400 M763.5 419.1 L771.5 419.5 M762 438 L770 438.9 M759.5 456.9 L767.4 458.2 M756 475.7 L763.9 477.3 M751.6 494.2 L759.3 496.3 M746.2 512.5 L753.8 515 M739.8 530.4 L747.3 533.3 M732.5 548.1 L739.8 551.3 M724.3 565.3 L731.5 568.9 M704.8 576 L722.2 586 M705.3 598.2 L712 602.6 M694.5 614 L701 618.7 M682.9 629.1 L689.1 634.1 M670.5 643.6 L676.4 648.9 M657.4 657.4 L663 663 M643.6 670.5 L648.9 676.4 M629.1 682.9 L634.1 689.1 M614 694.5 L618.7 701 M598.2 705.3 L602.6 712 M576 704.8 L586 722.2 M565.3 724.3 L568.9 731.5 M548.1 732.5 L551.3 739.8 M530.4 739.8 L533.3 747.3 M512.5 746.2 L515 753.8 M494.2 751.6 L496.3 759.3 M475.7 756 L477.3 763.9 M456.9 759.5 L458.2 767.4 M438 762 L438.9 770 M419.1 763.5 L419.5 771.5 M400 752 L400 772 M380.9 763.5 L380.5 771.5 M362 762 L361.1 770 M343.1 759.5 L341.8 767.4 M324.3 756 L322.7 763.9 M305.8 751.6 L303.7 759.3 M287.5 746.2 L285 753.8 M269.6 739.8 L266.7 747.3 M251.9 732.5 L248.7 739.8 M234.7 724.3 L231.1 731.5 M224 704.8 L214 722.2 M201.8 705.3 L197.4 712 M186 694.5 L181.3 701 M170.9 682.9 L165.9 689.1 M156.4 670.5 L151.1 676.4 M142.6 657.4 L137 663 M129.5 643.6 L123.6 648.9 M117.1 629.1 L110.9 634.1 M105.5 614 L99 618.7 M94.7 598.2 L88 602.6 M95.2 576 L77.8 586 M75.7 565.3 L68.5 568.9 M67.5 548.1 L60.2 551.3 M60.2 530.4 L52.7 533.3 M53.8 512.5 L46.2 515 M48.4 494.2 L40.7 496.3 M44 475.7 L36.1 477.3 M40.5 456.9 L32.6 458.2 M38 438 L30 438.9 M36.5 419.1 L28.5 419.5 M48 400 L28 400 M36.5 380.9 L28.5 380.5 M38 362 L30 361.1 M40.5 343.1 L32.6 341.8 M44 324.3 L36.1 322.7 M48.4 305.8 L40.7 303.7 M53.8 287.5 L46.2 285 M60.2 269.6 L52.7 266.7 M67.5 251.9 L60.2 248.7 M75.7 234.7 L68.5 231.1 M95.2 224 L77.8 214 M94.7 201.8 L88 197.4 M105.5 186 L99 181.3 M117.1 170.9 L110.9 165.9 M129.5 156.4 L123.6 151.1 M142.6 142.6 L137 137 M156.4 129.5 L151.1 123.6 M170.9 117.1 L165.9 110.9 M186 105.5 L181.3 99 M201.8 94.7 L197.4 88 M224 95.2 L214 77.8 M234.7 75.7 L231.1 68.5 M251.9 67.5 L248.7 60.2 M269.6 60.2 L266.7 52.7 M287.5 53.8 L285 46.2 M305.8 48.4 L303.7 40.7 M324.3 44 L322.7 36.1 M343.1 40.5 L341.8 32.6 M362 38 L361.1 30 M380.9 36.5 L380.5 28.5" stroke="#f4efe8" stroke-opacity="0.32" stroke-width="1"/>
+            <path class="hb-cross" d="M607.1 187.9 H617.1 M612.1 182.9 V192.9 M607.1 612.1 H617.1 M612.1 607.1 V617.1 M182.9 612.1 H192.9 M187.9 607.1 V617.1 M182.9 187.9 H192.9 M187.9 182.9 V192.9" stroke="#f2c4d6" stroke-opacity="0.55" stroke-width="1"/>
+            <g class="hb-deg" fill="#f4efe8" fill-opacity="0.5" font-family="Inter Tight, ui-sans-serif, sans-serif" font-size="11" letter-spacing="1.6" text-anchor="middle">
+              <text x="400" y="22">000°</text>
+              <text x="786" y="404" text-anchor="end">090°</text>
+              <text x="400" y="794">180°</text>
+              <text x="14" y="404" text-anchor="start">270°</text>
+            </g>
+            <g class="hb-orbit">
+              <circle class="hb-orbit-dot" cx="400" cy="64" r="3.4" fill="#f2c4d6"/>
+              <circle class="hb-orbit-halo" cx="400" cy="64" r="9" stroke="#f2c4d6" stroke-opacity="0.45" stroke-width="1"/>
+            </g>
+          </g>
+      
+          <circle class="hb-heart" cx="400" cy="400" r="190" fill="url(#hb-g-heart)"/>
+      
+          <g class="hb-flower" data-bloom-layer="0.5">
+      
+            <g class="hb-part hb-sepal" data-bloom-part data-angle="0" data-amp="1" data-spread="0" transform="rotate(0 400 400)">
+              <g class="hb-unfurl">
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="url(#hb-g-sepal)"/>
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="url(#hb-gloss)" opacity="0.55"/>
+                <path class="hb-vein" d="M395.5 388 Q 373.6 296.8, 363.8 253.8 M397 388 Q 382.4 296.8, 375.9 213.1 M398.5 388 Q 391.2 296.8, 387.9 188.7 M401.5 388 Q 408.8 296.8, 412.1 188.7 M403 388 Q 417.6 296.8, 424.1 213.1 M404.5 388 Q 426.4 296.8, 436.2 253.8" fill="none" stroke="url(#hb-vein-g)" stroke-width="0.9" stroke-linecap="round"/>
+                <path class="hb-vein" d="M400 394 Q 406 297.4, 401 205.6" fill="none" stroke="url(#hb-rib-g)" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="none" stroke="url(#hb-rim)" stroke-width="1.2"/>
+              </g>
+            </g>
+      
+            <g class="hb-part hb-sepal" data-bloom-part data-angle="128" data-amp="1.2" data-spread="1" transform="rotate(128 400 400)">
+              <g class="hb-unfurl">
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="url(#hb-g-sepal)"/>
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="url(#hb-gloss)" opacity="0.55"/>
+                <path class="hb-vein" d="M395.5 388 Q 373.6 296.8, 363.8 253.8 M397 388 Q 382.4 296.8, 375.9 213.1 M398.5 388 Q 391.2 296.8, 387.9 188.7 M401.5 388 Q 408.8 296.8, 412.1 188.7 M403 388 Q 417.6 296.8, 424.1 213.1 M404.5 388 Q 426.4 296.8, 436.2 253.8" fill="none" stroke="url(#hb-vein-g)" stroke-width="0.9" stroke-linecap="round"/>
+                <path class="hb-vein" d="M400 394 Q 406 297.4, 401 205.6" fill="none" stroke="url(#hb-rib-g)" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="none" stroke="url(#hb-rim)" stroke-width="1.2"/>
+              </g>
+            </g>
+      
+            <g class="hb-part hb-sepal" data-bloom-part data-angle="-128" data-amp="1.2" data-spread="-1" transform="rotate(-128 400 400)">
+              <g class="hb-unfurl">
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="url(#hb-g-sepal)"/>
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="url(#hb-gloss)" opacity="0.55"/>
+                <path class="hb-vein" d="M395.5 388 Q 373.6 296.8, 363.8 253.8 M397 388 Q 382.4 296.8, 375.9 213.1 M398.5 388 Q 391.2 296.8, 387.9 188.7 M401.5 388 Q 408.8 296.8, 412.1 188.7 M403 388 Q 417.6 296.8, 424.1 213.1 M404.5 388 Q 426.4 296.8, 436.2 253.8" fill="none" stroke="url(#hb-vein-g)" stroke-width="0.9" stroke-linecap="round"/>
+                <path class="hb-vein" d="M400 394 Q 406 297.4, 401 205.6" fill="none" stroke="url(#hb-rib-g)" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M400 404 C 366 356, 338 252, 350 182 C 358 136, 380 108, 400 94 C 420 108, 442 136, 450 182 C 462 252, 434 356, 400 404 Z" fill="none" stroke="url(#hb-rim)" stroke-width="1.2"/>
+              </g>
+            </g>
+      
+            <g class="hb-part hb-petal" data-bloom-part data-angle="70" data-amp="1.4" data-spread="1" transform="rotate(70 400 400)">
+              <g class="hb-unfurl">
+                <ellipse class="hb-shade" cx="400" cy="262" rx="168" ry="176" fill="url(#hb-shade)"/>
+                <path d="M400 410 C 344 384, 284 326, 266 252 C 250 184, 290 124, 352 110 C 372 105, 386 112, 400 108 C 414 112, 428 105, 448 110 C 510 124, 550 184, 534 252 C 516 326, 456 384, 400 410 Z" fill="url(#hb-g-petal)"/>
+                <path d="M400 410 C 344 384, 284 326, 266 252 C 250 184, 290 124, 352 110 C 372 105, 386 112, 400 108 C 414 112, 428 105, 448 110 C 510 124, 550 184, 534 252 C 516 326, 456 384, 400 410 Z" fill="url(#hb-gloss)" opacity="0.55"/>
+                <path class="hb-vein" d="M389.2 386 Q 321.1 291.4, 284.9 307.4 M391 386 Q 334.2 294.8, 304.1 271 M392.8 386 Q 347.4 298.3, 323.3 241.3 M394.6 386 Q 360.5 301.7, 342.5 218.5 M396.4 386 Q 373.7 305.2, 361.6 202.4 M398.2 386 Q 386.8 308.6, 380.8 193.2 M401.8 386 Q 413.2 308.6, 419.2 193.2 M403.6 386 Q 426.3 305.2, 438.4 202.4 M405.4 386 Q 439.5 301.7, 457.5 218.5 M407.2 386 Q 452.6 298.3, 476.7 241.3 M409 386 Q 465.8 294.8, 495.9 271 M410.8 386 Q 478.9 291.4, 515.1 307.4" fill="none" stroke="url(#hb-vein-g)" stroke-width="0.9" stroke-linecap="round"/>
+                <path class="hb-vein" d="M400 394 Q 406 305, 401 220" fill="none" stroke="url(#hb-rib-g)" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M400 410 C 344 384, 284 326, 266 252 C 250 184, 290 124, 352 110 C 372 105, 386 112, 400 108 C 414 112, 428 105, 448 110 C 510 124, 550 184, 534 252 C 516 326, 456 384, 400 410 Z" fill="none" stroke="url(#hb-rim)" stroke-width="1.2"/>
+              </g>
+            </g>
+      
+            <g class="hb-part hb-petal" data-bloom-part data-angle="-70" data-amp="1.4" data-spread="-1" transform="rotate(-70 400 400)">
+              <g class="hb-unfurl">
+                <ellipse class="hb-shade" cx="400" cy="262" rx="168" ry="176" fill="url(#hb-shade)"/>
+                <path d="M400 410 C 344 384, 284 326, 266 252 C 250 184, 290 124, 352 110 C 372 105, 386 112, 400 108 C 414 112, 428 105, 448 110 C 510 124, 550 184, 534 252 C 516 326, 456 384, 400 410 Z" fill="url(#hb-g-petal)"/>
+                <path d="M400 410 C 344 384, 284 326, 266 252 C 250 184, 290 124, 352 110 C 372 105, 386 112, 400 108 C 414 112, 428 105, 448 110 C 510 124, 550 184, 534 252 C 516 326, 456 384, 400 410 Z" fill="url(#hb-gloss)" opacity="0.55"/>
+                <path class="hb-vein" d="M389.2 386 Q 321.1 291.4, 284.9 307.4 M391 386 Q 334.2 294.8, 304.1 271 M392.8 386 Q 347.4 298.3, 323.3 241.3 M394.6 386 Q 360.5 301.7, 342.5 218.5 M396.4 386 Q 373.7 305.2, 361.6 202.4 M398.2 386 Q 386.8 308.6, 380.8 193.2 M401.8 386 Q 413.2 308.6, 419.2 193.2 M403.6 386 Q 426.3 305.2, 438.4 202.4 M405.4 386 Q 439.5 301.7, 457.5 218.5 M407.2 386 Q 452.6 298.3, 476.7 241.3 M409 386 Q 465.8 294.8, 495.9 271 M410.8 386 Q 478.9 291.4, 515.1 307.4" fill="none" stroke="url(#hb-vein-g)" stroke-width="0.9" stroke-linecap="round"/>
+                <path class="hb-vein" d="M400 394 Q 406 305, 401 220" fill="none" stroke="url(#hb-rib-g)" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M400 410 C 344 384, 284 326, 266 252 C 250 184, 290 124, 352 110 C 372 105, 386 112, 400 108 C 414 112, 428 105, 448 110 C 510 124, 550 184, 534 252 C 516 326, 456 384, 400 410 Z" fill="none" stroke="url(#hb-rim)" stroke-width="1.2"/>
+              </g>
+            </g>
+            <g class="hb-part hb-lip" data-bloom-part data-angle="0" data-amp="0.8" data-spread="0" transform="rotate(0 400 400)">
+              <g class="hb-unfurl">
+                <path d="M392 412 C 358 424, 326 408, 320 380 C 316 360, 334 348, 352 358 C 372 370, 386 392, 392 412 Z" fill="url(#hb-g-lobe)"/>
+                <path d="M408 412 C 442 424, 474 408, 480 380 C 484 360, 466 348, 448 358 C 428 370, 414 392, 408 412 Z" fill="url(#hb-g-lobe-r)"/>
+                <path d="M400 404 C 378 420, 352 452, 360 488 C 366 514, 386 524, 400 552 C 414 524, 434 514, 440 488 C 448 452, 422 420, 400 404 Z" fill="url(#hb-g-lip)"/>
+                <path d="M400 404 C 378 420, 352 452, 360 488 C 366 514, 386 524, 400 552 C 414 524, 434 514, 440 488 C 448 452, 422 420, 400 404 Z" fill="url(#hb-gloss)" opacity="0.4"/>
+                <path class="hb-tendril" d="M396 548 C 386 572, 360 580, 348 566 C 340 556, 350 544, 360 552" stroke="#f2c4d6" stroke-width="2.2" stroke-linecap="round"/>
+                <path class="hb-tendril" d="M404 548 C 414 572, 440 580, 452 566 C 460 556, 450 544, 440 552" stroke="#f2c4d6" stroke-width="2.2" stroke-linecap="round"/>
+                <g fill="#3a1550" fill-opacity="0.55">
+                  <ellipse cx="386" cy="468" rx="3.2" ry="4.4"/><ellipse cx="414" cy="468" rx="3.2" ry="4.4"/>
+                  <ellipse cx="400" cy="490" rx="2.6" ry="3.6"/><ellipse cx="378" cy="448" rx="2.2" ry="3"/>
+                  <ellipse cx="422" cy="448" rx="2.2" ry="3"/><ellipse cx="392" cy="506" rx="1.8" ry="2.6"/>
+                  <ellipse cx="408" cy="506" rx="1.8" ry="2.6"/><ellipse cx="344" cy="376" rx="2" ry="2.8"/>
+                  <ellipse cx="456" cy="376" rx="2" ry="2.8"/>
+                </g>
+                <ellipse cx="400" cy="430" rx="13" ry="9" fill="#e8c46a"/>
+                <ellipse cx="400" cy="427" rx="7" ry="4" fill="#fff1c4" fill-opacity="0.8"/>
+              </g>
+            </g>
+            <g class="hb-part hb-column" data-bloom-part data-angle="0" data-amp="0.5" data-spread="0" transform="rotate(0 400 400)">
+              <g class="hb-unfurl">
+                <path d="M400 370 C 386 380, 384 402, 391 418 C 395 426, 405 426, 409 418 C 416 402, 414 380, 400 370 Z" fill="url(#hb-g-column)"/>
+                <circle cx="400" cy="380" r="6" fill="url(#hb-g-pollen)"/>
+              </g>
+            </g>
+          </g>
+      
+          <g class="hb-pollen" data-bloom-layer="1.2"><circle cx="744.9" cy="400.1" r="1.8" fill="#f2c4d6" opacity="0.5"/><circle cx="364.9" cy="131.1" r="1.9" fill="#e8c46a" opacity="0.8"/><circle cx="408.7" cy="127" r="2.7" fill="#f4efe8" opacity="0.7"/><circle cx="488" cy="202.7" r="2" fill="#e6d2f1" opacity="0.7"/><circle cx="342.2" cy="229.3" r="2.7" fill="#b26bd8" opacity="0.6"/><circle cx="685.7" cy="248.5" r="1.4" fill="#f2c4d6" opacity="0.6"/><circle cx="666.4" cy="260.4" r="2.6" fill="#e8c46a" opacity="0.7"/><circle cx="691.5" cy="220.1" r="2" fill="#f4efe8" opacity="0.5"/><circle cx="521.4" cy="201" r="1.5" fill="#e6d2f1" opacity="0.5"/><circle cx="196.4" cy="498.2" r="3.3" fill="#b26bd8" opacity="0.7"/><circle cx="356.3" cy="66.1" r="1.2" fill="#f2c4d6" opacity="0.5"/><circle cx="152.4" cy="300.9" r="2.1" fill="#e8c46a" opacity="0.5"/><circle cx="551.7" cy="302.3" r="2" fill="#f4efe8" opacity="0.5"/><circle cx="223" cy="103.1" r="2.3" fill="#e6d2f1" opacity="0.4"/><circle cx="214.3" cy="525.1" r="2" fill="#b26bd8" opacity="0.6"/><circle cx="265.6" cy="635.4" r="2.6" fill="#f2c4d6" opacity="0.5"/><circle cx="613.9" cy="257.6" r="3.2" fill="#e8c46a" opacity="0.7"/><circle cx="221.9" cy="199.6" r="2.3" fill="#f4efe8" opacity="0.7"/></g>
+      
+          <g class="hb-caption" data-bloom-layer="-0.3">
+            <path class="hb-leader" d="M26 100 H136 L250 236" stroke="#f4efe8" stroke-opacity="0.4" stroke-width="1"/>
+            <circle cx="250" cy="236" r="3.2" fill="#f2c4d6"/>
+            <circle cx="250" cy="236" r="8" stroke="#f2c4d6" stroke-opacity="0.5" stroke-width="1"/>
+            <g font-family="Inter Tight, ui-sans-serif, sans-serif" fill="#f4efe8">
+              <text x="26" y="36" font-size="11" letter-spacing="2.4" fill-opacity="0.7">FIG. 01</text>
+              <text class="hb-serif" x="26" y="62" font-size="17" font-style="italic" fill-opacity="0.85">Orchidaceae,</text>
+              <text class="hb-serif" x="26" y="84" font-size="17" font-style="italic" fill-opacity="0.85">studio cultivar</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="hero__dim" data-hero-dim></div>
+  </div>
+  <div class="hero__curtain" data-hero-curtain aria-hidden="true"></div>
+
+  <div class="hero__inner container">
+    <div class="hero__top" data-hero-out>
+      <p class="eyebrow hero__eyebrow">
+        <span class="eyebrow__dot hero__eyebrow-dot"></span>
+        <span class="sr-only">Independent brand, web &amp; story studio</span>
+        <span class="hero__scramble-wrap" aria-hidden="true"><span class="hero__scramble-ghost">Independent brand, web &amp; story studio</span><span class="hero__scramble">Independent brand, web &amp; story studio</span></span>
+      </p>
+      <ul class="hero__meta" role="list">
+        <li class="hero__meta-item hero__meta-item--est"><span class="hero__est">(Est. 2014)</span></li>
+        <li class="hero__meta-item hero__meta-item--place">
+          <svg class="hero__globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1"/>
+            <ellipse class="hero__globe-m" cx="12" cy="12" rx="4.6" ry="10.5" fill="none" stroke="currentColor" stroke-width="1"/>
+            <path d="M1.5 12h21M3.6 6.5h16.8M3.6 17.5h16.8" fill="none" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          <span>Lisbon <span class="hero__sep" aria-hidden="true">·</span> New York</span>
+        </li>
+        <li class="hero__meta-item hero__meta-item--coords" aria-hidden="true">38°43′N&nbsp;/&nbsp;40°42′N</li>
+      </ul>
+      <span class="hero__rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="hero__head">
+      <h1 class="hero__title" id="hero-title" data-hero-title>
+        <span class="sr-only">Brands, websites &amp; stories that bloom.</span>
+        <span class="hero__lines" aria-hidden="true">
+          <span class="hero__line hero__line--1" data-hero-line><span class="hero__line-inner" data-hero-split>Brands, websites</span></span>
+          <span class="hero__line hero__line--2" data-hero-line><span class="hero__line-inner" data-hero-split>&amp; stories that</span></span>
+          <span class="hero__line hero__line--3" data-hero-line><span class="hero__line-inner"><span class="hero__word-wrap" data-hero-split><em class="hero__em">bloom</em>.</span><span class="hero__sparkle" data-hero-sparkle><svg viewBox="0 0 40 40" focusable="false"><defs><linearGradient id="hero-sparkle-g" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff4f8"/><stop offset="0.5" stop-color="#f2c4d6"/><stop offset="1" stop-color="#b26bd8"/></linearGradient></defs><path d="M20 0 C 21.6 11.4, 28.6 18.4, 40 20 C 28.6 21.6, 21.6 28.6, 20 40 C 18.4 28.6, 11.4 21.6, 0 20 C 11.4 18.4, 18.4 11.4, 20 0 Z" fill="url(#hero-sparkle-g)"/></svg></span></span></span>
+        </span>
+      </h1>
+      <div class="hero__sub-wrap" data-hero-out>
+        <span class="hero__sub-index" aria-hidden="true">(00)</span>
+        <p class="hero__sub">Orchid is a small, senior studio shaping identities, digital experiences and content for companies with something real to say.</p>
+      </div>
+    </div>
+
+    <div class="hero__actions" data-hero-out>
+      <div class="hero__cta">
+        <a class="btn hero__btn" href="#contact" data-magnetic="0.25">
+          <span class="btn__label"><span class="btn__label-inner" data-text="Start a project">Start a project</span></span>
+          <span class="btn__icon" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="hero__cta">
+        <a class="btn btn--ghost hero__btn hero__btn--ghost" href="#work" data-magnetic="0.25">
+          <span class="btn__label"><span class="btn__label-inner" data-text="See selected work">See selected work</span></span>
+          <span class="btn__icon" aria-hidden="true">↘</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__bottom" data-hero-out>
+      <span class="hero__rule hero__rule--bottom" aria-hidden="true"></span>
+      <p class="hero__pill">
+        <span class="hero__pill-dot" aria-hidden="true"><span></span></span>
+        <span class="hero__pill-text">Booking projects for spring 2027 <span class="hero__pill-sep" aria-hidden="true">—</span> <strong>2 spots left</strong></span>
+      </p>
+      <a class="hero__cue" href="#studio" data-cursor-label="Scroll">
+        <span class="hero__cue-track" aria-hidden="true"><span class="hero__cue-line"></span></span>
+        <span class="hero__cue-text">Scroll to explore</span>
+      </a>
+      <p class="hero__folio" aria-hidden="true"><span>N° 01</span><span class="hero__folio-bar"></span><span>Brand · Web · Story</span></p>
+    </div>
+
+    <div class="hero__badge" data-hero-badge aria-hidden="true">
+      <div class="hero__badge-in">
+        <div class="badge-spin">
+          <svg viewBox="0 0 132 132" focusable="false">
+            <defs><path id="hero-badge-path" d="M66 66 m-54 0 a54 54 0 1 1 108 0 a54 54 0 1 1 -108 0"/></defs>
+            <text><textPath href="#hero-badge-path" textLength="339" lengthAdjust="spacing">Orchid Studio • Since 2014 • Made with care •</textPath></text>
+          </svg>
+          <span class="badge-spin__center hero__badge-center">
+            <svg class="hero__badge-mark" viewBox="0 0 100 100" focusable="false">
+              <g fill="currentColor">
+                <path d="M50 50 C 41 38, 40 19, 50 6 C 60 19, 59 38, 50 50 Z"/>
+                <path d="M50 50 C 41 38, 40 19, 50 6 C 60 19, 59 38, 50 50 Z" transform="rotate(72 50 50)"/>
+                <path d="M50 50 C 41 38, 40 19, 50 6 C 60 19, 59 38, 50 50 Z" transform="rotate(144 50 50)"/>
+                <path d="M50 50 C 41 38, 40 19, 50 6 C 60 19, 59 38, 50 50 Z" transform="rotate(216 50 50)"/>
+                <path d="M50 50 C 41 38, 40 19, 50 6 C 60 19, 59 38, 50 50 Z" transform="rotate(288 50 50)"/>
+              </g>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
