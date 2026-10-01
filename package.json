@@ -1,0 +1,19 @@
+{
+  "name": "orchid-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Animated GSAP landing page (static HTML/CSS/JS, zero runtime dependencies).",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "serve": "node tools/serve.mjs",
+    "dev": "node tools/build.mjs && node tools/serve.mjs",
+    "import": "node tools/import-site.mjs"
+  },
+  "devDependencies": {
+    "node-html-parser": "^9.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
