@@ -1,0 +1,97 @@
+/* Design tokens. Every section reads these; change the brand here. */
+:root {
+  /* Palette */
+  --c-ink: #0e0b12;          /* near-black plum: primary dark surface */
+  --c-ink-2: #17121d;        /* raised dark surface */
+  --c-ink-3: #241b2c;        /* dark borders, wells */
+  --c-paper: #f4efe8;        /* warm cream: primary light surface */
+  --c-paper-2: #ebe3d8;      /* raised light surface */
+  --c-paper-3: #ddd2c4;      /* light borders, wells */
+  --c-orchid: #b26bd8;       /* brand signal */
+  --c-orchid-2: #9a4fc4;     /* pressed / hover */
+  --c-orchid-deep: #4c1d66;  /* deep brand for gradients */
+  --c-orchid-soft: #e6d2f1;  /* tint */
+  --c-blush: #f2c4d6;        /* secondary warm tint */
+  --c-pollen: #e8c46a;       /* tiny highlights only */
+  --c-sage: #a9b8a0;         /* rare cool counterpoint */
+
+  --grad-orchid: linear-gradient(115deg, #f2c4d6 0%, #b26bd8 45%, #5b2378 100%);
+  --grad-bloom: radial-gradient(60% 60% at 50% 40%, rgba(178, 107, 216, 0.55) 0%, rgba(76, 29, 102, 0.25) 45%, rgba(14, 11, 18, 0) 75%);
+
+  /* Typography */
+  --f-display: 'Instrument Serif', 'Iowan Old Style', 'Times New Roman', serif;
+  --f-sans: 'Inter Tight', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-mega: clamp(4.5rem, 15vw, 17rem);
+  --fs-h1: clamp(3.25rem, 8.4vw, 9rem);
+  --fs-h2: clamp(2.6rem, 5.8vw, 6rem);
+  --fs-h3: clamp(1.75rem, 3vw, 2.75rem);
+  --fs-h4: clamp(1.35rem, 1.9vw, 1.75rem);
+  --fs-lead: clamp(1.2rem, 1.9vw, 1.65rem);
+  --fs-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --lh-tight: 0.92;
+  --lh-snug: 1.15;
+  --lh-body: 1.6;
+  --tracking-display: -0.025em;
+  --tracking-label: 0.16em;
+
+  /* Space & layout */
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+  --section-pad: clamp(6rem, 13vw, 12.5rem);
+  --container: 1440px;
+  --radius-sm: 10px;
+  --radius: 22px;
+  --radius-lg: 36px;
+  --nav-h: 76px;
+
+  /* Motion (mirrors the GSAP CustomEases registered in src/js/core/01-motion.js) */
+  --ease-orchid: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.45, 0, 0.15, 1);
+
+  /* Elevation */
+  --shadow-soft: 0 30px 80px -30px rgba(14, 11, 18, 0.45);
+  --shadow-glow: 0 0 0 1px rgba(178, 107, 216, 0.25), 0 30px 90px -20px rgba(178, 107, 216, 0.45);
+
+  --z-grain: 900;
+  --z-cursor: 1000;
+  --z-progress: 950;
+  --z-nav: 800;
+  --z-menu: 790;
+  --z-preloader: 1100;
+}
+
+/* Section color schemes. Add data-theme="dark|light|orchid" to any section. */
+[data-theme='dark'] {
+  --bg: var(--c-ink);
+  --bg-2: var(--c-ink-2);
+  --fg: var(--c-paper);
+  --muted: #a397ad;
+  --line: rgba(244, 239, 232, 0.14);
+  --line-strong: rgba(244, 239, 232, 0.3);
+  --accent: var(--c-orchid);
+  color-scheme: dark;
+}
+[data-theme='light'] {
+  --bg: var(--c-paper);
+  --bg-2: var(--c-paper-2);
+  --fg: var(--c-ink);
+  --muted: #6d6275;
+  --line: rgba(14, 11, 18, 0.13);
+  --line-strong: rgba(14, 11, 18, 0.3);
+  --accent: var(--c-orchid-2);
+  color-scheme: light;
+}
+[data-theme='orchid'] {
+  --bg: var(--c-orchid);
+  --bg-2: #c084e2;
+  --fg: var(--c-ink);
+  --muted: rgba(14, 11, 18, 0.66);
+  --line: rgba(14, 11, 18, 0.18);
+  --line-strong: rgba(14, 11, 18, 0.4);
+  --accent: var(--c-ink);
+  color-scheme: light;
+}

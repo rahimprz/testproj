@@ -1,0 +1,54 @@
+h1, h2, h3, .display, .h1, .h2, .h3 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+h4, .h4 { font-family: var(--f-sans); font-weight: 600; font-size: var(--fs-h4); line-height: var(--lh-snug); letter-spacing: -0.015em; }
+.mega { font-family: var(--f-display); font-size: var(--fs-mega); line-height: 0.82; letter-spacing: -0.04em; }
+.h1 { font-size: var(--fs-h1); }
+.h2 { font-size: var(--fs-h2); }
+.h3 { font-size: var(--fs-h3); line-height: 1.02; }
+.lead { font-size: var(--fs-lead); line-height: 1.35; letter-spacing: -0.01em; text-wrap: pretty; }
+.small { font-size: var(--fs-small); }
+.muted { color: var(--muted, #a397ad); }
+p { text-wrap: pretty; }
+
+/* Serif italic accent inside headings: <h2>Brands that <em>bloom</em></h2> */
+h1 em, h2 em, h3 em, .display em, .mega em, .accent-em {
+  font-style: italic;
+  font-family: var(--f-display);
+  letter-spacing: -0.02em;
+}
+.text-grad {
+  background: var(--grad-orchid);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Eyebrow label: <p class="eyebrow"><span class="eyebrow__dot"></span>Studio</p> */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  font-family: var(--f-sans);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--muted, #a397ad);
+}
+.eyebrow__dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent, var(--c-orchid));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, var(--c-orchid)) 22%, transparent);
+}
+/* Section index: <span class="index">(01)</span> */
+.index { font-family: var(--f-display); font-style: italic; font-size: 1.15rem; color: var(--muted, #a397ad); letter-spacing: 0; }
+.label { font-size: var(--fs-label); font-weight: 500; letter-spacing: var(--tracking-label); text-transform: uppercase; }
+
+/* SplitText helpers (core FX uses SplitText mask:'lines'; this keeps descenders visible). */
+.split-line { padding-bottom: 0.06em; margin-bottom: -0.06em; }
