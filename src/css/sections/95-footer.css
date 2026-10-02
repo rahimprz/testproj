@@ -2,10 +2,7 @@
 .footer__inner { position: relative; padding-top: clamp(4.5rem, 8vw, 7rem); }
 .footer__top { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.6rem; }
 .footer__logo img { height: 52px; width: auto; }
-.footer__logo-text { display: none; font-family: var(--f-display); font-weight: 700; font-stretch: 82%; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
-.footer__logo-text b { color: var(--c-sun); font-weight: inherit; }
-.footer__logo.is-missing img { display: none; }
-.footer__logo.is-missing .footer__logo-text { display: inline; }
+
 .footer__text { max-width: 40em; color: rgba(255, 255, 255, 0.8); }
 .footer__form { position: relative; display: flex; width: min(100%, 620px); padding: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); }
 .footer__input { flex: 1; min-width: 0; padding: 0.9rem 1.2rem; background: transparent; border: 0; color: #fff; font-size: 1rem; outline: none; }

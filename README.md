@@ -17,9 +17,14 @@ A few things were changed or need your input:
 - The contact form and newsletter form post to the existing WordPress Contact Form 7 form and Newsletter plugin.
 - Instagram and Facebook links are `#` on the WordPress page too.
 
-Every image is loaded in this order: a local copy in `assets/img/original/`, then the live WordPress upload,
-then a designed stand-in (a CSS book cover or a starfield panel). To serve the images locally, run the importer
-below. Headings use Clash Display from the WordPress uploads, falling back to a condensed Archivo.
+Bundled media, supplied by the client:
+- `assets/img/brand/logo-light.webp` and `logo-dark.webp` (the dark one is generated for light sections), `favicon-192.png` cut from the W mark.
+- `assets/img/brand/book.webp` (single cover) and `books.webp` (two-book mockup).
+- `assets/video/trailer.mp4` and its poster `assets/img/brand/trailer-poster.jpg`.
+
+The author photo and the space backdrops still come from the WordPress uploads. Each tries a local copy in
+`assets/img/original/` first, then the live upload, then a designed stand-in. Run the importer below to keep local copies.
+Headings use Clash Display from the WordPress uploads, falling back to a condensed Archivo.
 
 ## Import the original site
 

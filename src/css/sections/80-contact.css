@@ -3,8 +3,7 @@
 .contact__media { position: relative; }
 .contact__shape { position: absolute; left: 0; bottom: 0; width: 62%; height: 62%; background: var(--c-sun); clip-path: polygon(50% 0, 0 100%, 100% 100%); }
 .contact__img { position: relative; margin: 0; }
-.contact__img img { width: 100%; height: auto; filter: drop-shadow(2px 4px 6px #000); }
-.contact__img .book3d { width: 55%; margin-block: 10%; }
+.contact__img img { width: 80%; margin-inline: auto; height: auto; filter: drop-shadow(2px 4px 6px rgba(0,0,0,.6)) drop-shadow(0 30px 40px rgba(0,0,0,.25)); }
 .contact__copy { display: flex; flex-direction: column; gap: 2rem; }
 .contact__title { font-size: var(--fs-h2); text-transform: capitalize; color: var(--c-ink); }
 .contact__form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }

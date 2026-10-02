@@ -6,10 +6,10 @@
     </header>
   </div>
   <div class="trailer__clip">
-    <button class="trailer__card" type="button" data-trailer-open data-video="https://orchid-tapir-982695.hostingersite.com/wp-content/uploads/2026/04/Video-File.mp4" data-cursor-label="Play" aria-label="Play the book trailer">
-      <span class="trailer__poster" data-media>
-        <img src="assets/img/original/image.png" data-remote="https://orchid-tapir-982695.hostingersite.com/wp-content/uploads/2026/04/image-1536x864.png" alt="" width="1536" height="864" loading="lazy">
-        <span class="media-fallback"><span class="media-fallback__label">Borland</span></span>
+    <button class="trailer__card" type="button" data-trailer-open data-video="assets/video/trailer.mp4" data-cursor-label="Play" aria-label="Play the book trailer">
+      <span class="trailer__poster">
+        <img src="assets/img/brand/trailer-poster.jpg" alt="" width="1600" height="900" loading="lazy">
+        <video class="trailer__loop" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" poster="assets/img/brand/trailer-poster.jpg"><source src="assets/video/trailer.mp4" type="video/mp4"></video>
       </span>
       <span class="trailer__shade" aria-hidden="true"></span>
       <span class="trailer__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
@@ -20,7 +20,7 @@
     <div class="trailer-modal__bg" data-trailer-close></div>
     <div class="trailer-modal__box" role="dialog" aria-modal="true" aria-label="Book trailer">
       <button class="trailer-modal__close" type="button" data-trailer-close aria-label="Close trailer">✕</button>
-      <video class="trailer-modal__video" controls playsinline preload="none"></video>
+      <video class="trailer-modal__video" controls playsinline preload="none" poster="assets/img/brand/trailer-poster.jpg"></video>
     </div>
   </div>
 </section>

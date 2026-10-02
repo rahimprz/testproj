@@ -5,7 +5,6 @@
 .series__shape { position: absolute; left: 0; bottom: 4%; width: 70%; height: 70%; background: var(--c-sun); clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%); }
 .series__img { position: relative; margin: 0; }
 .series__img img { width: 100%; height: auto; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.25)); }
-.series__img .book3d { width: 55%; margin-block: 10%; }
 .series__copy { display: flex; flex-direction: column; gap: 1.4rem; align-items: flex-start; }
 .series__label { font-family: var(--f-ui); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: #8a7f92; display: flex; align-items: center; gap: 0.8rem; }
 .series__label::after { content: ''; width: 60px; height: 1px; background: currentColor; }

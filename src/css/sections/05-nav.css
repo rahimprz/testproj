@@ -22,9 +22,11 @@ html.menu-open .nav { --nav-fg: #fff; transform: none; }
 .nav__logo { position: relative; display: inline-flex; align-items: center; justify-self: start; height: 46px; }
 .nav__logo-img { height: 42px; width: auto; transition: filter 0.5s var(--ease-out), transform 0.8s var(--ease-orchid); }
 .nav__logo:hover .nav__logo-img { transform: scale(1.04); }
-/* The logo PNG is white; on light sections invert it to dark ink. */
-html[data-nav-theme='light'] .nav__logo-img { filter: brightness(0); }
-html.menu-open .nav__logo-img { filter: none; }
+/* White-text logo on dark sections, ink-text logo on light ones; the orange W stays. */
+.nav__logo-img--dark { position: absolute; left: 0; top: 50%; translate: 0 -50%; opacity: 0; }
+.nav__logo-img--light, .nav__logo-img--dark { transition: opacity 0.4s var(--ease-out), transform 0.8s var(--ease-orchid); }
+html[data-nav-theme='light']:not(.menu-open) .nav__logo-img--light { opacity: 0; }
+html[data-nav-theme='light']:not(.menu-open) .nav__logo-img--dark { opacity: 1; }
 .nav__logo-text { display: none; font-family: var(--f-display); font-weight: 700; font-stretch: 82%; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
 .nav__logo-text b { color: var(--c-sun); font-weight: inherit; }
 .nav__logo.is-missing .nav__logo-img { display: none; }

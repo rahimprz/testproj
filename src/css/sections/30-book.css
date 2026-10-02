@@ -20,8 +20,7 @@
 .book__center { position: relative; display: grid; place-items: center; }
 .book__disc { position: absolute; left: 6%; bottom: 4%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f6b54a, #ed970f 55%, #c96f08); box-shadow: 0 0 100px rgba(237, 151, 15, 0.45); }
 .book__mock { position: relative; margin: 0; width: 100%; }
-.book__mock img { width: 100%; height: auto; filter: drop-shadow(2px 4px 6px #000) drop-shadow(0 40px 50px rgba(0,0,0,.45)); }
-.book__mock .book3d { width: 62%; margin-block: 8%; }
+.book__mock img { width: 82%; margin-inline: auto; height: auto; filter: drop-shadow(2px 4px 6px #000) drop-shadow(0 40px 50px rgba(0,0,0,.45)); }
 @media (max-width: 1099px) {
   .book__grid { grid-template-columns: 1fr 1fr; }
   .book__center { grid-column: 1 / -1; grid-row: 1; max-width: 460px; justify-self: center; }
