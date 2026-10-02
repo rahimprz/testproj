@@ -1,0 +1,21 @@
+/* Headings use Archivo (variable width) set condensed and bold. */
+@font-face {
+  font-family: 'Archivo Var';
+  src: url('/fonts/archivo-latin-wdth-normal.woff2') format('woff2-variations'),
+       url('/fonts/archivo-latin-wdth-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face { font-family: 'Poppins'; src: url('/fonts/poppins-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/fonts/poppins-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/fonts/poppins-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/jost-latin-wght-normal.woff2') format('woff2-variations'),
+       url('/fonts/jost-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,10 @@
+.tape { position: relative; z-index: 3; height: clamp(150px, 16vw, 230px); margin-block: calc(clamp(150px, 16vw, 230px) / -2); pointer-events: none; overflow: clip; }
+.tape__band { position: absolute; left: -5%; right: -5%; top: 50%; overflow: hidden; padding-block: 0.9rem; }
+.tape__band--sun { background: var(--c-sun); color: var(--c-ink); transform: translateY(-50%) rotate(-2.5deg); z-index: 2; box-shadow: 0 20px 40px -20px rgba(170, 69, 27, 0.6); }
+.tape__band--plum { background: var(--c-plum); color: rgba(255, 255, 255, 0.85); transform: translateY(-50%) rotate(2deg); }
+.tape__track { display: flex; width: max-content; will-change: transform; }
+.tape__group { display: flex; align-items: center; flex-shrink: 0; }
+.tape__item { display: flex; align-items: center; }
+.tape__item > span { font-family: var(--f-display); font-weight: 700; font-stretch: 80%; font-size: clamp(1.4rem, 2.8vw, 2.6rem); line-height: 1; text-transform: uppercase; letter-spacing: 0.02em; white-space: nowrap; padding-inline: 1.4rem; }
+.tape__band--plum .tape__item > span { font-family: var(--f-ui); font-weight: 500; font-stretch: normal; font-size: clamp(0.9rem, 1.4vw, 1.15rem); letter-spacing: 0.24em; }
+.tape__star { width: 1.1rem; height: 1.1rem; flex-shrink: 0; fill: currentColor; }

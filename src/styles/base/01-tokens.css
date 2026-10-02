@@ -1,0 +1,102 @@
+/* Design tokens, taken from the William W. Halford WordPress site and extended. */
+:root {
+  /* Palette */
+  --c-night: #0c0910;        /* deep space */
+  --c-plum: #332a3b;         /* site's primary dark (overlays, cards) */
+  --c-plum-2: #241d2b;       /* deeper plum */
+  --c-plum-3: #1a1520;
+  --c-mauve: #6d6078;        /* reviews section */
+  --c-sun: #ed970f;          /* accent orange: the first sun */
+  --c-sun-2: #eeb253;        /* the second sun */
+  --c-ember: #aa451b;        /* glow / drop-shadow */
+  --c-ink: #111111;
+  --c-paper: #faf7f2;        /* light sections */
+  --c-paper-2: #f1ebe2;
+  --c-white: #ffffff;
+
+  /* Legacy aliases used by the shared components */
+  --c-orchid: var(--c-sun);
+  --c-orchid-2: #d9850a;
+  --c-orchid-soft: #ffd79a;
+  --c-pollen: var(--c-sun-2);
+
+  --grad-sun: linear-gradient(120deg, #eeb253 0%, #ed970f 45%, #aa451b 100%);
+  --grad-orchid: var(--grad-sun);
+  --grad-bloom: radial-gradient(60% 60% at 50% 40%, rgba(237, 151, 15, 0.45) 0%, rgba(170, 69, 27, 0.18) 45%, rgba(12, 9, 16, 0) 75%);
+
+  /* Typography */
+  --f-display: 'Archivo Var', 'Arial Narrow', Impact, sans-serif;
+  --f-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --f-ui: 'Jost', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+  --fs-mega: clamp(4rem, 15vw, 16rem);
+  --fs-h1: clamp(2.75rem, 6.6vw, 6.4rem);
+  --fs-h2: clamp(2.3rem, 5vw, 4.6rem);
+  --fs-h3: clamp(1.35rem, 1.8vw, 1.6rem);
+  --fs-h4: clamp(1.05rem, 1.3vw, 1.25rem);
+  --fs-lead: clamp(1.1rem, 1.5vw, 1.35rem);
+  --fs-body: clamp(0.98rem, 0.94rem + 0.2vw, 1.0625rem);
+  --fs-small: 0.875rem;
+  --fs-label: 0.78rem;
+
+  --lh-tight: 0.98;
+  --lh-snug: 1.2;
+  --lh-body: 1.7;
+  --tracking-display: 0.01em;
+  --tracking-label: 0.2em;
+
+  /* Space & layout */
+  --gutter: clamp(1rem, 4.5vw, 5.6rem);
+  --section-pad: clamp(5.5rem, 11vw, 10rem);
+  --container: 1425px;
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 28px;
+  --nav-h: 84px;
+
+  --ease-orchid: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.45, 0, 0.15, 1);
+
+  --shadow-book: 2px 4px 6px rgba(170, 69, 27, 0.9);
+  --shadow-soft: 0 30px 80px -30px rgba(12, 9, 16, 0.55);
+
+  --z-grain: 900;
+  --z-cursor: 1000;
+  --z-progress: 950;
+  --z-nav: 800;
+  --z-menu: 790;
+  --z-modal: 1050;
+  --z-preloader: 1100;
+}
+
+[data-theme='dark'] {
+  --bg: var(--c-plum-2);
+  --bg-2: var(--c-plum);
+  --fg: var(--c-white);
+  --muted: rgba(255, 255, 255, 0.72);
+  --line: rgba(255, 255, 255, 0.14);
+  --line-strong: rgba(255, 255, 255, 0.32);
+  --accent: var(--c-sun);
+  color-scheme: dark;
+}
+[data-theme='light'] {
+  --bg: var(--c-paper);
+  --bg-2: var(--c-paper-2);
+  --fg: var(--c-ink);
+  --muted: #5b5263;
+  --line: rgba(17, 17, 17, 0.12);
+  --line-strong: rgba(17, 17, 17, 0.3);
+  --accent: #c87a05;
+  color-scheme: light;
+}
+[data-theme='mauve'] {
+  --bg: var(--c-mauve);
+  --bg-2: var(--c-plum);
+  --fg: var(--c-white);
+  --muted: rgba(255, 255, 255, 0.8);
+  --line: rgba(255, 255, 255, 0.18);
+  --line-strong: rgba(255, 255, 255, 0.4);
+  --accent: var(--c-sun-2);
+  color-scheme: dark;
+}

@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "settings": {
+    "amazonUrl": "",
+    "orderUrl": "https://orchid-tapir-982695.hostingersite.com/product/prince-of-borland/",
+    "instagramUrl": "",
+    "facebookUrl": "",
+    "contactEmail": "",
+    "announcement": ""
+  },
+  "posts": [
+    {
+      "id": "p-why",
+      "slug": "why-i-wrote-por-prince-of-borland",
+      "title": "Why I Wrote POR! Prince of Borland",
+      "category": "Behind the Book",
+      "date": "2026-09-18",
+      "status": "published",
+      "featured": true,
+      "demo": true,
+      "cover": "img/posts/book-plum.jpg",
+      "excerpt": "Every story starts with a question. Mine was simple: what if one discovery changed your entire reality?",
+      "body": "Every story starts with a question. Mine was simple: **what if one discovery changed your entire reality?**\n\nI have always been curious about the unknown. The question stayed with me for years, through a career built on precision and responsibility, until it finally asked to be written down.\n\n## From the desert to a world of two suns\n\nBilly's journey begins somewhere familiar: the deserts of Arizona. I wanted readers to feel the heat of that first step before the ground falls away beneath him and he arrives somewhere no one has ever described to him. Borland is harsh, beautiful and alive, and it does not care that Billy is a stranger.\n\n## What the story is really about\n\nUnderneath the portals and the creatures, *POR! Prince of Borland* is about choices. Billy has to decide whether to return home, stay, fight, love or lead. Each choice costs him something, and I wanted readers to feel that weight with him.\n\n> Reality may extend far beyond what we understand. The question is what we do once we see it.\n\nThank you for reading, and for coming along on the journey.",
+      "readMinutes": 3
+    },
+    {
+      "id": "p-tower",
+      "slug": "from-the-control-tower-to-borland",
+      "title": "From the Control Tower to Borland",
+      "category": "The Author",
+      "date": "2026-09-04",
+      "status": "published",
+      "featured": false,
+      "demo": true,
+      "cover": "img/posts/author-desk.jpg",
+      "excerpt": "Air traffic control taught me discipline. Writing asked me to use that discipline for imagination.",
+      "body": "People sometimes ask how an Air Traffic Controller ends up writing science fiction. The answer is that the two have more in common than you might think.\n\n## Precision and responsibility\n\nServing in the **United States Air Force** and later in the **U.S. Army Civil Service**, I learned to hold many moving pieces in my head at once and to make every decision count. A story works the same way: characters, timelines and consequences all have to stay in the air without colliding.\n\n## Structure meets imagination\n\nWhat I bring to the page is a blend of structure and curiosity. I plan carefully, then I let the world surprise me. Borland grew that way, one careful step at a time, until it felt as real to me as the runway lights.\n\n- Plan the route before you take off.\n- Respect the weather you cannot control.\n- Bring everyone home safely, even your characters.\n\nI could not have done any of it without my faith and the unwavering support of my family.",
+      "readMinutes": 3
+    },
+    {
+      "id": "p-borland",
+      "slug": "a-world-of-two-suns-building-borland",
+      "title": "A World of Two Suns: Building Borland",
+      "category": "Worldbuilding",
+      "date": "2026-08-21",
+      "status": "published",
+      "featured": false,
+      "demo": true,
+      "cover": "img/posts/prince-throne.jpg",
+      "excerpt": "Advanced civilizations, strange ecosystems and a time that flows differently from ours. A look at how Borland came together.",
+      "body": "Borland had to feel like a place you could get lost in. That meant thinking about more than landscapes.\n\n## Different ecosystems, different rules\n\nThe harsh, unfamiliar environment shapes everyone who lives there. Creatures like the Nahkvay are part of that ecosystem, and Billy has to learn quickly how to adapt physically, mentally and emotionally.\n\n## Power and betrayal\n\nEvery civilization has its fault lines. The subplot around Decragon explores jealousy and ambition inside the very structures that are supposed to hold Borland together.\n\n## Time that does not wait\n\nOne of my favourite ideas is that time flows differently between Earth and Borland. A choice made in one world echoes in the other, affecting relationships, aging and whole life paths in ways Billy cannot predict.\n\nI hope you enjoy exploring it as much as I enjoyed building it.",
+      "readMinutes": 3
+    },
+    {
+      "id": "p-trailer",
+      "slug": "the-book-trailer-is-here",
+      "title": "The Book Trailer Is Here",
+      "category": "News",
+      "date": "2026-08-07",
+      "status": "published",
+      "featured": false,
+      "demo": true,
+      "cover": "img/posts/trailer-heights.jpg",
+      "excerpt": "From the depths of valleys to towering heights: watch the official trailer for POR! Prince of Borland.",
+      "body": "I am excited to share the official video trailer for *POR! Prince of Borland*.\n\nFrom the depths of valleys to towering heights, it captures the scale of Billy's journey and the magic waiting for him in Borland.\n\n## Watch it now\n\nScroll up to the **My Book Video Trailer** section on the home page and press play. Turn the sound on for the full experience.\n\nIf you enjoy it, please share it with a friend who loves science fiction.",
+      "readMinutes": 1
+    },
+    {
+      "id": "p-questions",
+      "slug": "reader-questions-answered",
+      "title": "Reader Questions, Answered",
+      "category": "Readers",
+      "date": "2026-10-01",
+      "status": "draft",
+      "featured": false,
+      "demo": true,
+      "cover": "img/posts/books-dusk.jpg",
+      "excerpt": "You asked about Billy, Kim, Sharna and the metallic box. Here are a few answers, without spoilers.",
+      "body": "Thank you for every message you have sent through the contact form. Here are answers to a few of the questions I hear most often.\n\n## Will there be more books?\n\n*Write your answer here.*\n\n## Where did the idea for the metallic box come from?\n\n*Write your answer here.*",
+      "readMinutes": 2
+    }
+  ],
+  "reviews": [
+    { "id": "r1", "title": "A hidden gem in science fiction.", "name": "", "rating": 5, "visible": true, "text": "I didn't expect to get this immersed, but the story pulls you in from the very beginning. The transition from a normal college setting to an entirely new world is handled really well. The world-building is vivid, and Borland feels alive. Billy's growth throughout the story is what kept me hooked. Definitely worth the read." },
+    { "id": "r2", "title": "Creative, adventurous, and emotionally grounded.", "name": "", "rating": 5, "visible": true, "text": "What stood out to me was the balance between adventure and emotion. It's not just about another world. It's about belonging, purpose, and the choices we make. The relationship between Billy and Sharna adds a strong emotional layer. The ending especially stayed with me." },
+    { "id": "r3", "title": "A unique take on interdimensional travel.", "name": "", "rating": 5, "visible": true, "text": "The concept of the metallic box and the portal is simple but effective. The Nahkvay creatures and Borland's structure were particularly interesting. At times, I wanted even more detail about the world, but overall, it's a very engaging read with a lot of imagination behind it." },
+    { "id": "r4", "title": "You can feel the author's passion in every chapter.", "name": "", "rating": 5, "visible": true, "text": "This book feels personal. It's clear the author invested time and heart into building this story. The pacing keeps things moving, and there's always something happening, whether it's discovery, conflict, or character development. It's the kind of book you don't want to rush through." },
+    { "id": "r5", "title": "Strong storytelling with a classic sci-fi feel.", "name": "", "rating": 5, "visible": true, "text": "It reminded me of older sci-fi adventures where exploration and character growth were the focus. Billy's journey from student to warrior is satisfying to follow. The themes of loyalty and sacrifice are handled really well." }
+  ],
+  "messages": [
+    { "id": "m1", "demo": true, "firstName": "Sarah", "lastName": "Mitchell", "email": "sarah.mitchell@example.com", "phone": "(555) 010-2231", "date": "2026-10-01T15:42:00Z", "read": false, "message": "I just finished POR! Prince of Borland and couldn't put it down. Is there a sequel in the works? I need to know what happens next!" },
+    { "id": "m2", "demo": true, "firstName": "David", "lastName": "Okafor", "email": "d.okafor@example.com", "phone": "(555) 010-4410", "date": "2026-09-29T09:15:00Z", "read": false, "message": "I run a sci-fi book club in Little Rock and we picked your book for November. Would you be open to joining a short video call with the group?" },
+    { "id": "m3", "demo": true, "firstName": "Linda", "lastName": "Reyes", "email": "linda.reyes@example.com", "phone": "", "date": "2026-09-24T18:03:00Z", "read": true, "message": "Fellow Air Force veteran here. Loved seeing an ATC background behind such an imaginative story. Thank you for writing it." },
+    { "id": "m4", "demo": true, "firstName": "Marcus", "lastName": "Hale", "email": "marcus.hale@example.com", "phone": "(555) 010-8872", "date": "2026-09-16T12:27:00Z", "read": true, "message": "Hi William, I'm a librarian in Memphis. Is the book available through library distributors? Several patrons have asked for it." }
+  ],
+  "subscribers": [
+    { "id": "s1", "demo": true, "email": "reader.one@example.com", "date": "2026-10-01T10:00:00Z" },
+    { "id": "s2", "demo": true, "email": "scifi.fan@example.com", "date": "2026-09-30T21:14:00Z" },
+    { "id": "s3", "demo": true, "email": "j.carter@example.com", "date": "2026-09-27T08:45:00Z" },
+    { "id": "s4", "demo": true, "email": "bookclub.lr@example.com", "date": "2026-09-22T16:30:00Z" },
+    { "id": "s5", "demo": true, "email": "m.nguyen@example.com", "date": "2026-09-18T11:02:00Z" },
+    { "id": "s6", "demo": true, "email": "k.brooks@example.com", "date": "2026-09-11T19:20:00Z" },
+    { "id": "s7", "demo": true, "email": "a.patel@example.com", "date": "2026-09-05T07:55:00Z" },
+    { "id": "s8", "demo": true, "email": "t.wallace@example.com", "date": "2026-08-30T13:40:00Z" }
+  ]
+}

@@ -1,96 +1,85 @@
 # William W. Halford: POR! Prince of Borland
 
-An animated rebuild of the author landing page at `https://orchid-tapir-982695.hostingersite.com/`, made with
-GSAP 3.15 (every plugin, vendored), Lenis smooth scrolling, a canvas starfield and scroll-driven choreography.
-It is plain static HTML, CSS and JS: upload the files to any host (Hostinger shared hosting included) and it runs.
+Author website for *POR! Prince of Borland*, built with **React 19 + Vite**, GSAP 3.15 scroll animations and
+Lenis smooth scrolling, with an **admin panel** for blog posts, reviews, messages, subscribers and site links.
+It deploys to **Vercel** as a static site plus serverless functions in `/api`.
 
-## Content and images
+## Pages
 
-All copy comes from the WordPress page source: hero, About The Author, the six themes in About The Book,
-My Book Series, the trailer, the five reader reviews, Recent Posts, the contact form and the footer.
+| URL | What it is |
+| --- | --- |
+| `/` | The landing page: hero, about the author, six book themes, book series, trailer, reviews, blog, contact form, newsletter. |
+| `/#post-<slug>` | Opens a blog post in the full-screen reader (shareable link). |
+| `/admin` | Admin panel. |
 
-A few things were changed or need your input:
-- Typos fixed: "Amzaon" to "Amazon", "Halllford" to "Halford", "Trailor" to "Trailer".
-- The "Buy Now On Amazon" button still links to the About The Book section, as on the WordPress page. Add the real Amazon URL in `src/sections/10-hero.html`.
-- The series blurb on the WordPress page is lorem ipsum. It now reuses the hero line; replace it in `src/sections/40-series.html`.
-- The three blog cards are the site's placeholder posts ("Lorem Ipsum Is Dummy") and link to those post URLs.
-- The contact form and newsletter form post to the existing WordPress Contact Form 7 form and Newsletter plugin.
-- Instagram and Facebook links are `#` on the WordPress page too.
+## Deploy to Vercel
 
-Bundled media, supplied by the client:
-- `assets/img/brand/logo-light.webp` and `logo-dark.webp` (the dark one is generated for light sections), `favicon-192.png` cut from the W mark.
-- `assets/img/brand/book.webp` (single cover) and `books.webp` (two-book mockup).
-- `assets/video/trailer.mp4` and its poster `assets/img/brand/trailer-poster.jpg`.
+1. Import this repository in Vercel. The framework preset is detected as **Vite** (`vercel.json` sets the build).
+2. In **Project → Settings → Environment Variables**, add `ADMIN_PASSWORD` (your admin password).
+   Optionally add `SESSION_SECRET` (any long random string) so changing the password does not reuse old sessions.
+3. In **Project → Storage** (or the Vercel Marketplace), add **Upstash for Redis** and connect it to the project.
+   It sets `KV_REST_API_URL` and `KV_REST_API_TOKEN` automatically.
+4. Redeploy. The first request seeds the database with the demo content, so the admin panel starts with examples.
 
-The author photo and the space backdrops still come from the WordPress uploads. Each tries a local copy in
-`assets/img/original/` first, then the live upload, then a designed stand-in. Run the importer below to keep local copies.
-Headings use Clash Display from the WordPress uploads, falling back to a condensed Archivo.
+### Demo mode
 
-## Import the original site
+Without a database (steps 2–3 skipped, a static preview, or `npm run preview`) the site runs in **demo mode**:
+everything uses the bundled demo data and changes made in the admin panel are saved in that browser only.
+The demo admin password is `demo`. Contact messages and newsletter sign-ups made in demo mode also land in the
+demo inbox on the same browser, so you can try the whole flow.
 
-```bash
-npm install
-npm run import                      # pulls every image and the page text from the WordPress site
-# or: node tools/import-site.mjs https://example.com/ --depth=1 --max-pages=25
-# behind an HTTPS proxy: NODE_USE_ENV_PROXY=1 npm run import
-```
+## Admin panel
 
-It writes:
-- `assets/img/original/` with every image the pages and their stylesheets reference (largest `srcset` candidate, lazy-load attributes, CSS backgrounds, icons).
-- `content/original/outline.md` with the page text in document order.
-- `content/original/manifest.json` mapping each image to its source URL, alt text and nearest heading.
-- `content/original/site.json` with titles, navigation, footer text, contact links, socials, colour variables and fonts.
+- **Dashboard**: counts of posts, drafts, visible reviews, unread messages and subscribers.
+- **Posts**: create, edit, publish or keep as draft, feature one post, upload a cover image, write in Markdown
+  (`##` headings, `**bold**`, `*italic*`, `> quotes`, `- lists`, `[links](https://...)`) with a live preview.
+- **Reviews**: add, edit, hide or reorder the reader reviews shown in the carousel.
+- **Messages**: inbox for the contact form, with read/unread and reply by email.
+- **Subscribers**: newsletter list with CSV export.
+- **Settings**: Amazon link (used by "Buy Now On Amazon"), order link, Instagram, Facebook, contact email,
+  and an announcement line shown in the hero.
 
-The page already points at those file names, so no markup changes are needed after an import. Run `npm run build` after any edit.
+Posts and messages marked "Example" are demo content. Delete or edit them before launch.
 
 ## Develop
 
 ```bash
-npm run dev          # build, then serve on http://localhost:5173
-npm run build        # regenerate index.html, assets/css/site.css, assets/js/site.js
+npm install
+npm run dev                 # http://localhost:5173 (demo mode)
+STORE_FILE=.data/store.json ADMIN_PASSWORD=secret npm run dev   # live mode with a local JSON file as the database
+npm run build && npm run preview
 ```
 
-Add `?nopreload` to the URL to skip the preloader while working.
-
-`index.html`, `assets/css/site.css` and `assets/js/site.js` are generated. Edit the sources:
+Add `?nopreload` to the URL to skip the intro animation while working.
 
 | Path | What it holds |
 | --- | --- |
-| `src/index.template.html` | Page shell. Partials `00-09` render before `<main>`, `10-94` inside it, `95-99` after it. |
-| `src/sections/NN-name.html` | One partial per section, in page order. |
-| `src/css/base/` | Fonts, design tokens, reset, typography, layout, shared components. |
-| `src/css/sections/NN-name.css` | Styles scoped to one section. |
-| `src/js/core/` | Engine: plugin setup, Lenis, declarative scroll FX, preloader, cursor, nav, chrome. |
-| `src/js/sections/NN-name.js` | Each section's choreography, registered with `Site.register('name', ctx => {})`. |
-| `assets/vendor/` | GSAP and Lenis, served locally. |
-| `tools/` | Build script, static server, site importer. |
+| `src/site/App.jsx` | Loads content, renders the sections, then starts the animation engine. |
+| `src/site/sections/*.jsx` | One React component per section. |
+| `src/site/engine/` | GSAP + Lenis engine: smooth scroll, declarative scroll effects, preloader, cursor, nav. |
+| `src/site/fx/*.js` | Each section's scroll choreography. |
+| `src/styles/` | Design tokens, shared components and per-section CSS. |
+| `src/admin/` | The admin panel (React). |
+| `src/lib/store.js` | Data layer shared by the site and admin: live API or demo store. |
+| `src/data/demo.json` | Demo content and the database seed. |
+| `api/` | Vercel serverless functions: `content`, `contact`, `subscribe`, `media`, `admin`. |
+| `public/` | Fonts, images and the trailer video. |
 
-### Declarative scroll effects
+### Scroll-effect attributes
 
-Most reveals need no JavaScript. Add attributes in the HTML:
+Most reveals need no JavaScript: `data-reveal="up|fade|scale|blur…"`, `data-split="lines|words|chars"`
+(+ `data-split-anim="rise|fade|scrub"`), `data-parallax="0.2"`, `data-img-reveal="left"`, `data-count="240"`,
+`data-draw`, `data-magnetic`, `data-cursor-label="View"`. All effects respect `prefers-reduced-motion`.
 
-| Attribute | Effect |
-| --- | --- |
-| `data-reveal="up\|down\|left\|right\|fade\|scale\|blur"` | Reveal on enter. Options: `data-delay`, `data-duration`, `data-start`, `data-trigger="load"`. |
-| `data-reveal-group` | Staggers its children. Option: `data-stagger`. |
-| `data-split="lines\|words\|chars"` | SplitText reveal. `data-split-anim="rise\|fade\|scrub"`. |
-| `data-parallax="0.2"` | Scroll parallax. Positive drifts down, negative rises. |
-| `data-img-reveal="up\|down\|left\|right\|center"` | Clip-path wipe with an inner zoom-out. |
-| `data-count="240"` | Count-up. Options: `data-count-suffix`, `-prefix`, `-decimals`. |
-| `data-draw` / `data-draw="scrub"` | Draws SVG strokes. |
-| `data-magnetic="0.3"` | Magnetic hover on fine pointers. |
-| `data-skew="6"` | Skews with scroll velocity. |
-| `data-cursor-label="View"` | Custom cursor label on hover. |
+## Security notes
 
-All effects respect `prefers-reduced-motion`: smooth scrolling, pins and scrubbed choreography switch off and content renders in its final state.
+- The admin session is an HMAC-signed, httpOnly, SameSite=Strict cookie (7 days). Admin changes also require
+  an `X-Requested-With: admin` header, which blocks cross-site form submissions.
+- Login, contact and newsletter endpoints are rate limited; forms include a hidden honeypot field.
+- Everything saved is validated server-side: link fields accept http(s)/mailto only, images must be bundled
+  paths, uploaded media or https URLs, and post bodies are rendered from escaped Markdown.
 
-## Deploy
+## Credits
 
-Upload `index.html`, `.htaccess` and the `assets/` folder to the site root (for Hostinger: `public_html/`).
-The `.htaccess` sets compression and caching and hides the development folders if you upload the whole repo.
-
-## Credits and licences
-
-- GSAP 3.15 by GreenSock (free for commercial use under the GSAP standard license).
-- Lenis by darkroom.engineering (MIT).
-- Poppins, Jost and Archivo via Fontsource (SIL Open Font License, see `assets/fonts/`).
+GSAP 3.15 (free for commercial use), Lenis (MIT), Poppins, Jost and Archivo (SIL Open Font License).
+Book covers, logo, author photo and trailer supplied by the author.

@@ -1,0 +1,20 @@
+/* Global styles in cascade order. */
+@import './base/00-fonts.css';
+@import './base/01-tokens.css';
+@import './base/02-reset.css';
+@import './base/03-type.css';
+@import './base/04-layout.css';
+@import './base/05-components.css';
+@import './sections/00-preloader.css';
+@import './sections/05-nav.css';
+@import './sections/10-hero.css';
+@import './sections/15-tape.css';
+@import './sections/20-author.css';
+@import './sections/30-book.css';
+@import './sections/40-series.css';
+@import './sections/50-trailer.css';
+@import './sections/60-reviews.css';
+@import './sections/70-blogs.css';
+@import './sections/80-contact.css';
+@import './sections/95-footer.css';
+@import './sections/72-reader.css';

@@ -1,19 +1,24 @@
 {
-  "name": "orchid-landing",
-  "version": "1.0.0",
+  "name": "william-halford-site",
+  "version": "2.0.0",
   "private": true,
-  "description": "Animated GSAP landing page (static HTML/CSS/JS, zero runtime dependencies).",
   "type": "module",
   "scripts": {
-    "build": "node tools/build.mjs",
-    "serve": "node tools/serve.mjs",
-    "dev": "node tools/build.mjs && node tools/serve.mjs",
-    "import": "node tools/import-site.mjs"
-  },
-  "devDependencies": {
-    "node-html-parser": "^9.0.4"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.2"
   }
 }
