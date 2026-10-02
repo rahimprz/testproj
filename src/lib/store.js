@@ -195,6 +195,7 @@ export const admin = {
       const next = cleanPostClient(post, s);
       const i = s.posts.findIndex((x) => x.id === next.id);
       if (i >= 0) s.posts[i] = next; else s.posts.unshift(next);
+      if (next.featured) s.posts.forEach((p) => { if (p.id !== next.id) p.featured = false; });
       return next;
     });
   },

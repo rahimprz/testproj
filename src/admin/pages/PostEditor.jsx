@@ -51,6 +51,19 @@ export default function PostEditor({ id }) {
     return () => { guard.current = null; };
   }, [guard]);
 
+  // Ctrl/Cmd+S saves from anywhere on the editor screen (ignored while a dialog is open).
+  const saveRef = useRef(null);
+  useEffect(() => {
+    const onKey = (e) => {
+      if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        if (!document.body.classList.contains('has-dialog')) saveRef.current?.();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
+
   const categories = useMemo(() => [...new Set([...DEFAULT_CATEGORIES, ...data.posts.map((p) => p.category).filter(Boolean)])], [data.posts]);
   const words = form.body.split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.round(words / 220));
@@ -101,6 +114,8 @@ export default function PostEditor({ id }) {
     if (!existing) navigate(`posts/edit/${encodeURIComponent(saved.id)}`, { replace: true });
   }
 
+  saveRef.current = () => { if (!saving && !uploading) save(); };
+
   async function onFile(e) {
     const file = e.target.files?.[0];
     e.target.value = '';
@@ -117,10 +132,13 @@ export default function PostEditor({ id }) {
     ta.setSelectionRange(start, end);
     let ok = false;
     try { ok = document.execCommand('insertText', false, text); } catch { ok = false; }
-    if (!ok || ta.value.slice(start, start + text.length) !== text) {
-      const v = form.body;
-      set('body', v.slice(0, start) + text + v.slice(end));
+    if (ok && ta.value.slice(start, start + text.length) === text) {
+      // execCommand keeps the browser's undo history; the DOM already holds the new value, so select right away.
+      ta.setSelectionRange(start + selStart, start + selEnd);
+      return;
     }
+    const v = form.body;
+    set('body', v.slice(0, start) + text + v.slice(end));
     requestAnimationFrame(() => { ta.focus(); ta.setSelectionRange(start + selStart, start + selEnd); });
   }
 
@@ -172,7 +190,9 @@ export default function PostEditor({ id }) {
     const text = before + out + after;
     const contentStart = before.length + (all ? 0 : prefix.length);
     const contentEnd = before.length + out.length;
-    replaceRange(ta, ls, le, text, lines.length === 1 ? contentStart : before.length, contentEnd);
+    // Caret only on a non-empty line: keep a caret at the end. Placeholder or a selection: select the content.
+    const caretOnly = s === e && lines.length === 1 && lines[0].trim();
+    replaceRange(ta, ls, le, text, caretOnly ? contentEnd : lines.length === 1 ? contentStart : before.length, contentEnd);
   }
 
   function onBodyKey(e) {
@@ -183,9 +203,6 @@ export default function PostEditor({ id }) {
     else if (k === 'k') { e.preventDefault(); format('link'); }
   }
 
-  function onFormKey(e) {
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 's') { e.preventDefault(); if (!saving) save(); }
-  }
 
   function onTabKey(e) {
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
@@ -224,7 +241,7 @@ export default function PostEditor({ id }) {
         }
       />
 
-      <form id="post-form" className="editor" onSubmit={save} onKeyDown={onFormKey} noValidate>
+      <form id="post-form" className="editor" onSubmit={save} noValidate>
         <div className="editor__main">
           <div className="card stack">
             {existing?.demo && (

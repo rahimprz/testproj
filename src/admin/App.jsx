@@ -158,6 +158,13 @@ function Shell({ session, data, setData, onExpired, onSignedOut }) {
     return () => document.removeEventListener('keydown', onKey);
   }, [drawer]);
 
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 901px)');
+    const onChange = () => { if (mq.matches) setDrawer(false); };
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
   const navigate = useCallback((path, { replace = false, force = false } = {}) => {
     const target = href(path);
     if (force) { guard.current = null; allowNext.current = true; }

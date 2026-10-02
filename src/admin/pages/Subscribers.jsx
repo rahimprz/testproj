@@ -96,9 +96,11 @@ export default function Subscribers() {
             <tbody>
               {list.map((s) => (
                 <tr key={s.id}>
-                  <td className="table__email">
-                    <span className="avatar avatar--sm" aria-hidden="true">{s.email.charAt(0).toUpperCase()}</span>
-                    <a href={`mailto:${s.email}`}>{s.email}</a>
+                  <td>
+                    <div className="table__email">
+                      <span className="avatar avatar--sm" aria-hidden="true">{s.email.charAt(0).toUpperCase()}</span>
+                      <a href={`mailto:${s.email}`} title={s.email}>{s.email}</a>
+                    </div>
                   </td>
                   <td className="table__date"><time dateTime={s.date}>{formatDate(s.date, { month: 'short', day: 'numeric', year: 'numeric' })}</time></td>
                   <td className="ta-r">

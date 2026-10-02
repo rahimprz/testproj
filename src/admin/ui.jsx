@@ -139,7 +139,7 @@ export function ToastProvider({ children }) {
   }, []);
   const toast = useCallback((text, kind = 'success') => {
     const id = Math.random().toString(36).slice(2);
-    setItems((list) => [...list.slice(-3), { id, text, kind }]);
+    setItems((list) => [...list.slice(-2), { id, text, kind }]);
     timers.current.set(id, setTimeout(() => dismiss(id), kind === 'error' ? 7000 : 4000));
   }, [dismiss]);
   useEffect(() => () => timers.current.forEach(clearTimeout), []);

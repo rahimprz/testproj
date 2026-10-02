@@ -59,6 +59,7 @@ export default function Login({ session, notice, onSignedIn }) {
         )}
 
         <form className="login__form" onSubmit={submit} noValidate>
+          <input type="text" name="username" value="admin" autoComplete="username" readOnly hidden />
           <div className={`field ${error ? 'field--error' : ''}`}>
             <label className="field__label" htmlFor={id}>Password</label>
             <div className="pw">

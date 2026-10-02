@@ -49,6 +49,7 @@ export default handle(async (req, res) => {
         while (s.posts.some((p) => p.slug === slug && p.id !== next.id)) slug = `${slugify(next.slug)}-${n++}`;
         next.slug = slug;
         if (existing) Object.assign(existing, next); else s.posts.unshift(next);
+        if (next.featured) s.posts.forEach((p) => { if (p.id !== next.id) p.featured = false; });
         return next;
       });
       return send(res, 200, { post });

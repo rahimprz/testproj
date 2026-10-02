@@ -94,9 +94,13 @@ export default function Posts() {
                   {p.demo && <span className="tag">Example</span>}
                   <span className="post-row__sub">/{p.slug}</span>
                 </span>
-                <span className="post-row__cat"><span className="sr-only">Category: </span>{p.category}</span>
-                <span className="post-row__date"><span className="sr-only">Date: </span><time dateTime={p.date}>{formatDate(p.date, { month: 'short', day: 'numeric', year: 'numeric' })}</time></span>
-                <span className="post-row__status"><StatusPill status={p.status} /></span>
+                <span className="post-row__meta">
+                  <span className="post-row__catdate">
+                    <span className="post-row__cat"><span className="sr-only">Category: </span>{p.category}</span>
+                    <span className="post-row__date"><span className="sr-only">Date: </span><time dateTime={p.date}>{formatDate(p.date, { month: 'short', day: 'numeric', year: 'numeric' })}</time></span>
+                  </span>
+                  <span className="post-row__status"><StatusPill status={p.status} /></span>
+                </span>
                 <span className="post-row__actions">
                   <button
                     type="button"
